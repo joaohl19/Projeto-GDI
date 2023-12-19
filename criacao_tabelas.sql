@@ -55,7 +55,7 @@ CREATE TABLE Evento_Esportivo (
     Mandante VARCHAR(255),
     Visitante VARCHAR(255),
     Local VARCHAR(255),
-    ID_Evento INT PRIMARY KEY
+    ID_Evento INT DEFAULT seq_evento.NEXTVAL PRIMARY KEY
 );
 
 CREATE TABLE DataHora (
@@ -66,7 +66,7 @@ CREATE TABLE DataHora (
 );
 
 CREATE TABLE Aposta (
-    ID_Aposta INT PRIMARY KEY
+    ID_Aposta INT DEFAULT seq_aposta.NEXTVAL PRIMARY KEY
 );
 
 CREATE TABLE Bonus (
@@ -115,6 +115,18 @@ CREATE TABLE Apostar (
 );
 
 CREATE SEQUENCE seq_conta
+    START WITH 1,
+    INCREMENT BY 1,
+    NOCACHE,
+    NOCYCLE
+
+CREATE SEQUENCE seq_aposta
+    START WITH 1,
+    INCREMENT BY 1,
+    NOCACHE,
+    NOCYCLE
+
+CREATE SEQUENCE seq_evento
     START WITH 1,
     INCREMENT BY 1,
     NOCACHE,
