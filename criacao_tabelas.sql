@@ -1,18 +1,27 @@
+DROP TABLE Pessoas;
+DROP TABLE Pessoas_movimentam_contas;
+DROP TABLE Telefones;
+DROP TABLE Conta;
+DROP TABLE Dados_Bancarios;
+DROP TABLE Evento_Esportivo;
+DROP TABLE DataHora;
+DROP TABLE Aposta;
+DROP TABLE Bonus;
+DROP TABLE Gols;
+DROP TABLE Placar_Exato;
+DROP TABLE Resultado;
+DROP TABLE Ambos_Marcam;
+DROP TABLE Apostar;
+
 CREATE TABLE Pessoas (
     Nome VARCHAR(255),
-    Num_End VARCHAR(255),
+    Endereço VARCHAR(255),
     CPF VARCHAR(20) PRIMARY KEY,
     Nascimento DATE,
     CPF_Indica VARCHAR(20),
     FOREIGN KEY (CPF_Indica) REFERENCES Pessoas(CPF)
 );
 
-CREATE TABLE CEP (
-    Rua VARCHAR(255),
-    País VARCHAR(255),
-    CPF VARCHAR(20),
-    FOREIGN KEY (CPF) REFERENCES Pessoas(CPF)
-);
 
 CREATE TABLE Telefones (
     CPF VARCHAR(20),
@@ -22,9 +31,7 @@ CREATE TABLE Telefones (
 
 CREATE TABLE Conta (
     ID_Conta INT PRIMARY KEY,
-    CPF VARCHAR(20),
-    Saldo DECIMAL(10,2),
-    FOREIGN KEY (CPF) REFERENCES Pessoas(CPF)
+    Saldo DECIMAL(10,2)
 );
 
 CREATE TABLE Dados_Bancarios (
@@ -32,6 +39,16 @@ CREATE TABLE Dados_Bancarios (
     Agencia VARCHAR(20),
     ID_Conta INT,
     FOREIGN KEY (ID_Conta) REFERENCES Conta(ID_Conta)
+);
+
+CREATE TABLE Pessoas_movimentam_contas (
+    CPF VARCHAR(20),
+    ID_Conta INT,
+    Valor DECIMAL(10,2),
+    DataHora DATETIME,
+    FOREIGN KEY (CPF) REFERENCES Pessoas(CPF),
+    FOREIGN KEY (ID_Conta) REFERENCES Conta(ID_Conta),
+    PRIMARY KEY (CPF, ID_Conta)
 );
 
 CREATE TABLE Evento_Esportivo (
@@ -93,5 +110,6 @@ CREATE TABLE Apostar (
     FOREIGN KEY (CPF) REFERENCES Pessoas(CPF),
     FOREIGN KEY (ID_Conta) REFERENCES Conta(ID_Conta),
     FOREIGN KEY (ID_Evento) REFERENCES Evento_Esportivo(ID_Evento),
-    FOREIGN KEY (ID_Aposta) REFERENCES Aposta(ID_Aposta)
+    FOREIGN KEY (ID_Aposta) REFERENCES Aposta(ID_Aposta),
+    PRIMARY KEY (CPF, ID_Conta, ID_Evento, ID_Aposta)
 );
