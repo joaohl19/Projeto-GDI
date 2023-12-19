@@ -30,7 +30,7 @@ CREATE TABLE Telefones (
 );
 
 CREATE TABLE Conta (
-    ID_Conta INT PRIMARY KEY,
+    ID_Conta INT DEFAULT seq_conta.NEXTVAL PRIMARY KEY,
     Saldo DECIMAL(10,2)
 );
 
@@ -55,7 +55,7 @@ CREATE TABLE Evento_Esportivo (
     Mandante VARCHAR(255),
     Visitante VARCHAR(255),
     Local VARCHAR(255),
-    ID_Evento INT PRIMARY KEY
+    ID_Evento INT DEFAULT seq_evento.NEXTVAL PRIMARY KEY
 );
 
 CREATE TABLE DataHora (
@@ -65,7 +65,7 @@ CREATE TABLE DataHora (
 );
 
 CREATE TABLE Aposta (
-    ID_Aposta INT PRIMARY KEY
+    ID_Aposta INT DEFAULT seq_aposta.NEXTVAL PRIMARY KEY
 );
 
 CREATE TABLE Bonus (
