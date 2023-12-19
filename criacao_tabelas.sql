@@ -45,7 +45,7 @@ CREATE TABLE Pessoas_movimentam_contas (
     CPF VARCHAR(20),
     ID_Conta INT,
     Valor DECIMAL(10,2),
-    DataHora DATETIME,
+    DataHora TIMESTAMP,
     FOREIGN KEY (CPF) REFERENCES Pessoas(CPF),
     FOREIGN KEY (ID_Conta) REFERENCES Conta(ID_Conta),
     PRIMARY KEY (CPF, ID_Conta)
@@ -59,8 +59,7 @@ CREATE TABLE Evento_Esportivo (
 );
 
 CREATE TABLE DataHora (
-    Dia DATE,
-    Hora TIME,
+    DataHora TIMESTAMP,
     ID_Evento INT,
     FOREIGN KEY (ID_Evento) REFERENCES Evento_Esportivo(ID_Evento)
 );
