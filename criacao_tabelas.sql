@@ -30,7 +30,7 @@ CREATE TABLE Telefones (
 );
 
 CREATE TABLE Conta (
-    ID_Conta INT PRIMARY KEY,
+    ID_Conta INT DEFAULT seq_conta.NEXTVAL PRIMARY KEY,
     Saldo DECIMAL(10,2)
 );
 
@@ -113,3 +113,9 @@ CREATE TABLE Apostar (
     FOREIGN KEY (ID_Aposta) REFERENCES Aposta(ID_Aposta),
     PRIMARY KEY (CPF, ID_Conta, ID_Evento, ID_Aposta)
 );
+
+CREATE SEQUENCE seq_conta
+    START WITH 1,
+    INCREMENT BY 1,
+    NOCACHE,
+    NOCYCLE
