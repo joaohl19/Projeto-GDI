@@ -305,18 +305,67 @@ INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (19, "4005-2", 19)
 -- Example 20
 INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (20, "0105-3", 20);
 
+
 -- INSERINDO EVENTOS ESPORTIVOS
 -- Example 1
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Paulo", "Corinthians", "Morumbi", 1), ("Palmeiras", "Santos", "Allianz Parque", 2), 
-("Flamengo", "Fluminense", "Maracanã", 3), ("Vasco", "Botafogo", "São Januário", 4), 
-("Grêmio", "Internacional", "Arena do Grêmio", 5), ("Atlético-MG", "Cruzeiro", "Mineirão", 6), 
-("Bahia", "Vitória", "Fonte Nova", 7), ("Sport", "Náutico", "Ilha do Retiro", 8), 
-("Ceará", "Fortaleza", "Castelão", 9), ("Coritiba", "Atlético-PR", "Couto Pereira", 10), 
-("Ponte Preta", "Guarani", "Moisés Lucarelli", 11), ("São Caetano", "Santo André", "Anacleto Campanella", 12), 
-("São Bento", "São Bernardo", "Walter Ribeiro", 13), ("Juventus", "Portuguesa", "Conde Rodolfo Crespi", 14), 
-("Santos", "São Paulo", "Vila Belmiro", 15), ("Corinthians", "Palmeiras", "Arena Corinthians", 16), 
-("Fluminense", "Vasco", "Maracanã", 17), ("Botafogo", "Flamengo", "Engenhão", 18), 
-("Internacional", "Grêmio", "Beira-Rio", 19), ("Cruzeiro", "Atlético-MG", "Mineirão", 20);
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Paulo", "Corinthians", "Morumbi"),
+
+-- Example 2
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Palmeiras", "Santos", "Allianz Parque"), 
+
+-- Example 3
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Flamengo", "Fluminense", "Maracanã"),
+
+-- Example 4
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Vasco", "Botafogo", "São Januário"), 
+
+-- Example 5
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Grêmio", "Internacional", "Arena do Grêmio"),
+
+-- Example 6
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Atlético-MG", "Cruzeiro", "Mineirão"), 
+
+-- Example 7
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Bahia", "Vitória", "Fonte Nova"),
+
+-- Example 8
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Sport", "Náutico", "Ilha do Retiro"), 
+
+-- Example 9
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Ceará", "Fortaleza", "Castelão"),
+
+-- Example 10
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Coritiba", "Atlético-PR", "Couto Pereira"), 
+
+-- Example 11
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Ponte Preta", "Guarani", "Moisés Lucarelli"),
+
+-- Example 12
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Caetano", "Santo André", "Anacleto Campanella"), 
+
+-- Example 13
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Bento", "São Bernardo", "Walter Ribeiro"),
+
+-- Example 14
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Juventus", "Portuguesa", "Conde Rodolfo Crespi"), 
+
+-- Example 15
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Santos", "São Paulo", "Vila Belmiro"),
+
+-- Example 16
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Corinthians", "Palmeiras", "Arena Corinthians"), 
+
+-- Example 17
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Fluminense", "Vasco", "Maracanã"),
+
+-- Example 18
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Botafogo", "Flamengo", "Engenhão"), 
+
+-- Example 19
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES("Internacional", "Grêmio", "Beira-Rio"),
+
+-- Example 20
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Cruzeiro", "Atlético-MG", "Mineirão");
 
 INSERT INTO DataHora (ID_Evento, DataHora) VALUES (1, 73453453), 
 (2, 453783453), (3, 453453453), (4, 453453783), 
