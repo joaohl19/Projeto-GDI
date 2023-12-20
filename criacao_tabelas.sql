@@ -103,7 +103,7 @@ CREATE TABLE Resultado (
 
 CREATE TABLE Ambos_Marcam (
     ID_Aposta NUMBER,
-    Sim_Nao VARCHAR2(3) CHECK (Sim_Nao IN ('Sim', 'Não')),
+    Sim_Nao VARCHAR2(3) CHECK (Sim_Nao IN ('Sim', 'Nao')),
     CONSTRAINT ambos_marcam_fk FOREIGN KEY (ID_Aposta) REFERENCES Aposta(ID_Aposta)
 );
 
