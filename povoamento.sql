@@ -475,6 +475,69 @@ INSERT INTO Bonus (CPF, Codigo_Bonus, Valor) VALUES ('333.555.777-00', 'BONUS190
 INSERT INTO Bonus (CPF, Codigo_Bonus, Valor) VALUES ('333.555.777-00', 'BONUS200', 24.00);
 
 
+-- INSERINDO APOSTAS
+-- Example 1
+INSERT INTO Apostas (ID_Aposta) VALUES (1);
+
+-- Example 2
+INSERT INTO Apostas (ID_Aposta) VALUES (2);
+
+-- Example 3
+INSERT INTO Apostas (ID_Aposta) VALUES (3);
+
+-- Example 4  
+INSERT INTO Apostas (ID_Aposta) VALUES (4);
+
+-- Example 5
+INSERT INTO Apostas (ID_Aposta) VALUES (5);
+
+-- Example 6
+INSERT INTO Apostas (ID_Aposta) VALUES (6);
+
+-- Example 7
+INSERT INTO Apostas (ID_Aposta) VALUES (7);
+
+-- Example 8
+INSERT INTO Apostas (ID_Aposta) VALUES (8);
+
+-- Example 9
+INSERT INTO Apostas (ID_Aposta) VALUES (9);
+
+-- Example 10
+INSERT INTO Apostas (ID_Aposta) VALUES (10);
+
+-- Example 11
+INSERT INTO Apostas (ID_Aposta) VALUES (11);
+
+-- Example 12
+INSERT INTO Apostas (ID_Aposta) VALUES (12);
+
+-- Example 13
+INSERT INTO Apostas (ID_Aposta) VALUES (13);
+
+-- Example 14
+INSERT INTO Apostas (ID_Aposta) VALUES (14);
+
+-- Example 15
+INSERT INTO Apostas (ID_Aposta) VALUES (15);
+
+-- Example 16
+INSERT INTO Apostas (ID_Aposta) VALUES (16);
+
+-- Example 17
+INSERT INTO Apostas (ID_Aposta) VALUES (17);
+
+-- Example 18
+INSERT INTO Apostas (ID_Aposta) VALUES (18);
+
+-- Example 19
+INSERT INTO Apostas (ID_Aposta) VALUES (19);
+
+-- Example 20
+INSERT INTO Apostas (ID_Aposta) VALUES (20);
+
+
+
 -- INSERINDO Gols
 -- Example 1
 INSERT INTO Gols (ID_Aposta, Quantidade) VALUES (1, 4);
@@ -599,50 +662,130 @@ INSERT INTO Placar_Exato(ID_Aposta, Gol_Mandante, Gol_Visitante) VALUES (19, 0, 
 INSERT INTO Placar_Exato(ID_Aposta, Gol_Mandante, Gol_Visitante) VALUES (20, 1, 0);
 
 
+-- INSERINDO RESULTADO
+-- Example 1
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (1, 'Mandante');
+
+-- Example 2
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (2, 'Empate');
+
+-- Example 3
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (3, 'Mandante');
+
+-- Example 4
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (4, 'Mandante');
+
+-- Example 5
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (5, 'Empate');
+
+-- Example 6
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (6, 'Mandante');
+
+-- Example 7
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (7, 'Empate');
+
+-- Example 8
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (8, 'Mandante');
+
+-- Example 9
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (9, 'Empate');
+
+-- Example 10
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (10, 'Mandante');
+
+-- Example 11
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (11, 'Empate');
+
+-- Example 12
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (12, 'Mandante');
+
+-- Example 13
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (13, 'Empate');
+
+-- Example 14
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (14, 'Mandante');
+
+-- Example 15
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (15, 'Empate');
+
+-- Example 16
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (16, 'Mandante');
+
+-- Example 17
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (17, 'Empate');
+
+-- Example 18
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (18, 'Mandante');
+
+-- Example 19
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (19, 'Empate');
+
+-- Example 20
 INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (20, 'Mandante');
 
 
+-- INSERINDO AMBOS MARCAM
+-- Example 1
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (1, true);
+
+-- Example 2
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (2, true);
+
+-- Example 3
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (3, false);
+
+-- Example 4
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (4, true);
+
+-- Example 5
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (5, true);
+
+-- Example 6
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (6, false);
+
+-- Example 7
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (7, false);
+
+-- Example 8
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (8, false);
+
+-- Example 9
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (9, true);
+
+-- Example 10
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (10, true);
+
+-- Example 11
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (11, true);
+
+-- Example 12
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (12, false);
+
+-- Example 13
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (13, false);
+
+-- Example 14
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (14, false);
+
+-- Example 15
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (15, true);
+
+-- Example 16
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (16, true);
+
+-- Example 17
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (17, true);
+
+-- Example 18
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (18, false);
+
+-- Example 19
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (19, false);
+
+-- Example 20
 INSERT INTO Ambos_Marcam(ID_Aposta, Sim/Nao) VALUES (20, false);
 
-
+-- INSERINDO APOSTAR
 INSERT INTO Apostar(CPF, ID_Conta, ID_Evento, ID_Aposta, Valor) VALUES ('555.111.444-99', 4, 4, 4, 40.00);
 INSERT INTO Apostar(CPF, ID_Conta, ID_Evento, ID_Aposta, Valor) VALUES ('777.888.999-11', 5, 5, 5, 50.00);
 INSERT INTO Apostar(CPF, ID_Conta, ID_Evento, ID_Aposta, Valor) VALUES ('111.222.333-44', 6, 6, 6, 60.00);
