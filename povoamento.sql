@@ -246,67 +246,68 @@ INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('3
 
 -- INSERINDO DADOS BANCÁRIOS
 -- Example 1
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (1, "0001-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (1, "0001-2", 1),
 
 -- Example 2
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (2, "0002-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (2, "0002-3", 2),
 
 -- Example 3
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (3, "0004-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (3, "0004-2", 3),
 
 -- Example 4
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (4, "0003-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (4, "0003-3", 4),
 
 -- Example 5
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (5, "0405-2"), 
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (5, "0405-2", 5), 
 
 -- Example 6
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (6, "4001-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (6, "4001-3", 6),
 
 -- Example 7
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (7, "4002-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (7, "4002-2", 7),
 
 -- Example 8
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (8, "4001-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (8, "4001-3", 8),
 
 -- Example 9
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (9, "4001-2"), 
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (9, "4001-2", 9), 
 
 -- Example 10
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (10, "4001-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (10, "4001-3", 10),
 
 -- Example 11
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (11, "4504-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (11, "4504-2", 11),
 
 -- Example 12
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (12, "2101-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (12, "2101-3", 12),
 
 -- Example 13
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (13, "4500-2"), 
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (13, "4500-2", 13), 
 
 -- Example 14
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (14, "4002-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (14, "4002-3", 14),
 
 -- Example 15
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (15, "0002-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (15, "0002-2", 15),
 
 -- Example 16
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (16, "0404-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (16, "0404-3", 16),
 
 -- Example 17
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (17, "0402-2"), 
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (17, "0402-2", 17), 
 
 -- Example 18
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (18, "4004-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (18, "4004-3", 18),
 
 -- Example 19
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (19, "4005-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (19, "4005-2", 19),
 
 -- Example 20
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (20, "0105-3");
+INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (20, "0105-3", 20);
 
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Local) VALUES 
-("São Paulo", "Corinthians", "Morumbi", 1), ("Palmeiras", "Santos", "Allianz Parque", 2), 
+-- INSERINDO EVENTOS ESPORTIVOS
+-- Example 1
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Paulo", "Corinthians", "Morumbi", 1), ("Palmeiras", "Santos", "Allianz Parque", 2), 
 ("Flamengo", "Fluminense", "Maracanã", 3), ("Vasco", "Botafogo", "São Januário", 4), 
 ("Grêmio", "Internacional", "Arena do Grêmio", 5), ("Atlético-MG", "Cruzeiro", "Mineirão", 6), 
 ("Bahia", "Vitória", "Fonte Nova", 7), ("Sport", "Náutico", "Ilha do Retiro", 8), 

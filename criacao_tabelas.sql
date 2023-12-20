@@ -61,7 +61,7 @@ CREATE TABLE Pessoas_movimentam_contas (
 CREATE TABLE Evento_Esportivo (
     Mandante VARCHAR2(255),
     Visitante VARCHAR2(255),
-    Local VARCHAR2(255),
+    Estadio VARCHAR2(255),
     ID_Evento NUMBER DEFAULT seq_evento.NEXTVAL,
     CONSTRAINT evento_esportivo_pk PRIMARY KEY (ID_Evento)
 );
