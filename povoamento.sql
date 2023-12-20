@@ -121,6 +121,12 @@ INSERT INTO Telefones(CPF, Telefone) VALUES ('777.666.555-44', '2199888-9876');
 -- Example 20
 INSERT INTO Telefones(CPF, Telefone) VALUES ('333.555.777-00', '8798776-6655');
 
+
+INSERT INTO Conta (Saldo) VALUES (1000.00), (200.00), (500.00), 
+(70.00), (900.00), (200.00), (500.00), (70.00), (15.00), 
+(200.00), (500.00), (70.00), (35.00), (200.00), (500.00), 
+(70.00),(700.00), (200.00), (70.00), (70.00);
+
 --INSERINDO PESSOAS MOVIMENTAM CONTAS
 -- Example 1
 INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('244.244.244-23', 1,  90.00, 187654321);
@@ -182,11 +188,6 @@ INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('7
 -- Example 20
 INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.555.777-00', 20,  89.00, 891234567);
 
-
-INSERT INTO Conta (Saldo) VALUES (1000.00), (200.00), (500.00), 
-(70.00), (900.00), (200.00), (500.00), (70.00), (15.00), 
-(200.00), (500.00), (70.00), (35.00), (200.00), (500.00), 
-(70.00),(700.00), (200.00), (70.00), (70.00);
 
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (1, "0001-2", 1),
 (2, "0002-3", 2), (3, "0004-2", 3), (4, "0003-3"), (5, "0405-2"), 
