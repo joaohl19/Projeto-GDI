@@ -1,5 +1,4 @@
 --INSERINDO PESSOAS
-
 -- Instance 1
 INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('João Pedro', 'Rua um 24', '244.244.244-23', '2002-02-24', '333.555.777-00');
 
