@@ -99,13 +99,13 @@ CREATE TABLE Placar_Exato (
 
 CREATE TABLE Resultado (
     ID_Aposta NUMBER,
-    Resultado VARCHAR2(255) CHECK (Resultado IN ('Mandante', 'Visitante', 'Empate'))
+    Resultado VARCHAR2(255) CHECK (Resultado IN ('Mandante', 'Visitante', 'Empate')),
     CONSTRAINT resultado_fk FOREIGN KEY (ID_Aposta) REFERENCES Aposta(ID_Aposta)
 );
 
 CREATE TABLE Ambos_Marcam (
     ID_Aposta NUMBER,
-    Sim_Nao BIT NOT NULL,
+    Sim_Nao VARCHAR2(3) CHECK (Sim_Nao IN ('Sim', 'Não')),
     CONSTRAINT ambos_marcam_fk FOREIGN KEY (ID_Aposta) REFERENCES Aposta(ID_Aposta)
 );
 
