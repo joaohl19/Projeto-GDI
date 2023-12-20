@@ -119,34 +119,73 @@ INSERT INTO Telefones(CPF, Telefone) VALUES ('333.555.777-00', '8198345-6789');
 INSERT INTO Telefones(CPF, Telefone) VALUES ('777.666.555-44', '2199888-9876');
 
 -- Example 20
-INSERT INTO Telefones(CPF, Telefone) VALUES ('333.555.777-00', '8798776-6655');
+INSERT INTO Telefones(CPF, Telefone) VALUES ('333.565.777-00', '8798776-6655');
 
-
+-- INSERINDO CONTAS
+-- Example 1
 INSERT INTO Conta (Saldo) VALUES (1000.00);
+
+-- Example 2
 INSERT INTO Conta (Saldo) VALUES (200.00);
+
+-- Example 3
 INSERT INTO Conta (Saldo) VALUES (500.00);
+
+-- Example 4
 INSERT INTO Conta (Saldo) VALUES (70.00);
+
+-- Example 5
 INSERT INTO Conta (Saldo) VALUES (900.00);
+
+-- Example 6
 INSERT INTO Conta (Saldo) VALUES (200.00);
+
+-- Example 7
 INSERT INTO Conta (Saldo) VALUES (500.00);
+
+-- Example 8
 INSERT INTO Conta (Saldo) VALUES (70.00);
+
+-- Example 9
 INSERT INTO Conta (Saldo) VALUES (15.00);
+
+-- Example 10
 INSERT INTO Conta (Saldo) VALUES (200.00);
+
+-- Example 11
 INSERT INTO Conta (Saldo) VALUES (500.00);
+
+-- Example 12
 INSERT INTO Conta (Saldo) VALUES (70.00);
+
+-- Example 13
 INSERT INTO Conta (Saldo) VALUES (35.00);
+
+-- Example 14
 INSERT INTO Conta (Saldo) VALUES (200.00);
+
+-- Example 15
 INSERT INTO Conta (Saldo) VALUES (500.00);
+
+-- Example 16
 INSERT INTO Conta (Saldo) VALUES (70.00);
+
+-- Example 17
 INSERT INTO Conta (Saldo) VALUES (700.00);
+
+-- Example 18
 INSERT INTO Conta (Saldo) VALUES (200.00);
+
+-- Example 19
 INSERT INTO Conta (Saldo) VALUES (70.00);
+
+-- Example 20
 INSERT INTO Conta (Saldo) VALUES (70.00);
 
 
 --INSERINDO PESSOAS MOVIMENTAM CONTAS
 -- Example 1
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('244.244.244-23', 1,  90.00, 187654321);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('244.244.244-23', 1,  90.00, To_TI);
 
 -- Example 2
 INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('123.456.789-12', 2,  764.00, 987654322);
@@ -203,15 +242,29 @@ INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('3
 INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('777.666.555-44', 19,  4567.00, 789123456);
 
 -- Example 20
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.555.777-00', 20,  89.00, 891234567);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.565.777-00', 20,  89.00, 891234567);
 
 
-INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (1, "0001-2", 1),
-(2, "0002-3", 2), (3, "0004-2", 3), (4, "0003-3"), (5, "0405-2"), 
-(6, "4001-3"), (7, "4002-2"), (8, "4001-3"), (9, "4001-2"), 
-(10, "4001-3"), (11, "4504-2"), (12, "2101-3"), (13, "4500-2"), 
-(14, "4002-3"), (15, "0002-2"), (16, "0404-3"), (17, "0402-2"), 
-(18, "4004-3"), (19, "4005-2"), (20, "0105-3");
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (1, "0001-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (2, "0002-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (3, "0004-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (4, "0003-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (5, "0405-2"), 
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (6, "4001-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (7, "4002-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (8, "4001-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (9, "4001-2"), 
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (10, "4001-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (11, "4504-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (12, "2101-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (13, "4500-2"), 
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (14, "4002-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (15, "0002-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (16, "0404-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (17, "0402-2"), 
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (18, "4004-3"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (19, "4005-2"),
+INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (20, "0105-3");
 
 INSERT INTO Evento_Esportivo (Mandante, Visitante, Local) VALUES 
 ("São Paulo", "Corinthians", "Morumbi", 1), ("Palmeiras", "Santos", "Allianz Parque", 2), 
