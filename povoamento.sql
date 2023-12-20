@@ -477,64 +477,64 @@ INSERT INTO Bonus (CPF, Codigo_Bonus, Valor) VALUES ('333.555.777-00', 'BONUS200
 
 -- INSERINDO APOSTAS
 -- Example 1
-INSERT INTO Apostas (ID_Aposta) VALUES (1);
+INSERT INTO Aposta (ID_Aposta) VALUES (1);
 
 -- Example 2
-INSERT INTO Apostas (ID_Aposta) VALUES (2);
+INSERT INTO Aposta (ID_Aposta) VALUES (2);
 
 -- Example 3
-INSERT INTO Apostas (ID_Aposta) VALUES (3);
+INSERT INTO Aposta (ID_Aposta) VALUES (3);
 
 -- Example 4  
-INSERT INTO Apostas (ID_Aposta) VALUES (4);
+INSERT INTO Aposta (ID_Aposta) VALUES (4);
 
 -- Example 5
-INSERT INTO Apostas (ID_Aposta) VALUES (5);
+INSERT INTO Aposta (ID_Aposta) VALUES (5);
 
 -- Example 6
-INSERT INTO Apostas (ID_Aposta) VALUES (6);
+INSERT INTO Aposta (ID_Aposta) VALUES (6);
 
 -- Example 7
-INSERT INTO Apostas (ID_Aposta) VALUES (7);
+INSERT INTO Aposta (ID_Aposta) VALUES (7);
 
 -- Example 8
-INSERT INTO Apostas (ID_Aposta) VALUES (8);
+INSERT INTO Aposta (ID_Aposta) VALUES (8);
 
 -- Example 9
-INSERT INTO Apostas (ID_Aposta) VALUES (9);
+INSERT INTO Aposta (ID_Aposta) VALUES (9);
 
 -- Example 10
-INSERT INTO Apostas (ID_Aposta) VALUES (10);
+INSERT INTO Aposta (ID_Aposta) VALUES (10);
 
 -- Example 11
-INSERT INTO Apostas (ID_Aposta) VALUES (11);
+INSERT INTO Aposta (ID_Aposta) VALUES (11);
 
 -- Example 12
-INSERT INTO Apostas (ID_Aposta) VALUES (12);
+INSERT INTO Aposta (ID_Aposta) VALUES (12);
 
 -- Example 13
-INSERT INTO Apostas (ID_Aposta) VALUES (13);
+INSERT INTO Aposta (ID_Aposta) VALUES (13);
 
 -- Example 14
-INSERT INTO Apostas (ID_Aposta) VALUES (14);
+INSERT INTO Aposta (ID_Aposta) VALUES (14);
 
 -- Example 15
-INSERT INTO Apostas (ID_Aposta) VALUES (15);
+INSERT INTO Aposta (ID_Aposta) VALUES (15);
 
 -- Example 16
-INSERT INTO Apostas (ID_Aposta) VALUES (16);
+INSERT INTO Aposta (ID_Aposta) VALUES (16);
 
 -- Example 17
-INSERT INTO Apostas (ID_Aposta) VALUES (17);
+INSERT INTO Aposta (ID_Aposta) VALUES (17);
 
 -- Example 18
-INSERT INTO Apostas (ID_Aposta) VALUES (18);
+INSERT INTO Aposta (ID_Aposta) VALUES (18);
 
 -- Example 19
-INSERT INTO Apostas (ID_Aposta) VALUES (19);
+INSERT INTO Aposta (ID_Aposta) VALUES (19);
 
 -- Example 20
-INSERT INTO Apostas (ID_Aposta) VALUES (20);
+INSERT INTO Aposta (ID_Aposta) VALUES (20);
 
 
 
