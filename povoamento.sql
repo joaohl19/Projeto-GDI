@@ -726,64 +726,64 @@ INSERT INTO Resultado(ID_Aposta, Resultado) VALUES (20, 'Mandante');
 
 -- INSERINDO AMBOS MARCAM
 -- Example 1
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (1, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (1, 'Sim');
 
 -- Example 2
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (2, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (2, 'Sim');
 
 -- Example 3
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (3, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (3, 'Não');
 
 -- Example 4
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (4, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (4, 'Sim');
 
 -- Example 5
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (5, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (5, 'Sim');
 
 -- Example 6
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (6, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (6, 'Não');
 
 -- Example 7
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (7, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (7, 'Não');
 
 -- Example 8
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (8, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (8, 'Não');
 
 -- Example 9
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (9, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (9, 'Sim');
 
 -- Example 10
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (10, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (10, 'Sim');
 
 -- Example 11
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (11, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (11, 'Sim');
 
 -- Example 12
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (12, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (12, 'Não');
 
 -- Example 13
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (13, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (13, 'Não');
 
 -- Example 14
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (14, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (14, 'Não');
 
 -- Example 15
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (15, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (15, 'Sim');
 
 -- Example 16
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (16, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (16, 'Sim');
 
 -- Example 17
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (17, "Sim");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (17, 'Sim');
 
 -- Example 18
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (18, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (18, 'Não');
 
 -- Example 19
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (19, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (19, 'Não');
 
 -- Example 20
-INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (20, "Não");
+INSERT INTO Ambos_Marcam(ID_Aposta, Sim_Nao) VALUES (20, 'Não');
 
 -- INSERINDO APOSTAR
 -- Example 1
