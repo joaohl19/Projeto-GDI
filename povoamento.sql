@@ -244,26 +244,65 @@ INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('7
 -- Example 20
 INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.565.777-00', 20,  89.00, 891234567);
 
-
+-- INSERINDO DADOS BANCÁRIOS
+-- Example 1
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (1, "0001-2"),
+
+-- Example 2
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (2, "0002-3"),
+
+-- Example 3
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (3, "0004-2"),
+
+-- Example 4
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (4, "0003-3"),
+
+-- Example 5
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (5, "0405-2"), 
+
+-- Example 6
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (6, "4001-3"),
+
+-- Example 7
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (7, "4002-2"),
+
+-- Example 8
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (8, "4001-3"),
+
+-- Example 9
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (9, "4001-2"), 
+
+-- Example 10
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (10, "4001-3"),
+
+-- Example 11
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (11, "4504-2"),
+
+-- Example 12
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (12, "2101-3"),
+
+-- Example 13
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (13, "4500-2"), 
+
+-- Example 14
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (14, "4002-3"),
+
+-- Example 15
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (15, "0002-2"),
+
+-- Example 16
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (16, "0404-3"),
+
+-- Example 17
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (17, "0402-2"), 
+
+-- Example 18
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (18, "4004-3"),
+
+-- Example 19
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (19, "4005-2"),
+
+-- Example 20
 INSERT INTO Dados_Bancarios (Conta, Agencia) VALUES (20, "0105-3");
 
 INSERT INTO Evento_Esportivo (Mandante, Visitante, Local) VALUES 
