@@ -1,6 +1,6 @@
 --INSERINDO PESSOAS
 -- Instance 1
-INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('João Pedro', 'Rua um 24', '244.244.244-23', DATE '2002-02-24', '333.555.777-00');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('João Pedro', 'Rua um 24', '244.244.244-23', DATE '2002-02-24', NULL);
 
 -- Instance 2
 INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Maria Silva', 'Avenida dois 36', '123.456.789-12', DATE '1995-07-15', '244.244.244-23');
