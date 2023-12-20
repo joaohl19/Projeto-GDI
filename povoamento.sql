@@ -121,6 +121,7 @@ INSERT INTO Telefones(CPF, Telefone) VALUES ('777.666.555-44', '2199888-9876');
 -- Example 20
 INSERT INTO Telefones(CPF, Telefone) VALUES ('333.565.777-00', '8798776-6655');
 
+
 -- INSERINDO CONTAS
 -- Example 1
 INSERT INTO Conta (Saldo) VALUES (1000.00);
@@ -290,74 +291,129 @@ INSERT INTO Dados_Bancarios (Conta, Agencia, ID_Conta) VALUES (20, "0105-3", 20)
 
 -- INSERINDO EVENTOS ESPORTIVOS
 -- Example 1
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Paulo", "Corinthians", "Morumbi"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Paulo", "Corinthians", "Morumbi");
 
 -- Example 2
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Palmeiras", "Santos", "Allianz Parque"), 
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Palmeiras", "Santos", "Allianz Parque"); 
 
 -- Example 3
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Flamengo", "Fluminense", "Maracanã"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Flamengo", "Fluminense", "Maracanã");
 
 -- Example 4
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Vasco", "Botafogo", "São Januário"), 
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Vasco", "Botafogo", "São Januário"); 
 
 -- Example 5
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Grêmio", "Internacional", "Arena do Grêmio"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Grêmio", "Internacional", "Arena do Grêmio");
 
 -- Example 6
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Atlético-MG", "Cruzeiro", "Mineirão"), 
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Atlético-MG", "Cruzeiro", "Mineirão"); 
 
 -- Example 7
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Bahia", "Vitória", "Fonte Nova"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Bahia", "Vitória", "Fonte Nova");
 
 -- Example 8
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Sport", "Náutico", "Ilha do Retiro"), 
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Sport", "Náutico", "Ilha do Retiro"); 
 
 -- Example 9
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Ceará", "Fortaleza", "Castelão"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Ceará", "Fortaleza", "Castelão");
 
 -- Example 10
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Coritiba", "Atlético-PR", "Couto Pereira"), 
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Coritiba", "Atlético-PR", "Couto Pereira"); 
 
 -- Example 11
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Ponte Preta", "Guarani", "Moisés Lucarelli"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Ponte Preta", "Guarani", "Moisés Lucarelli");
 
 -- Example 12
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Caetano", "Santo André", "Anacleto Campanella"), 
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Caetano", "Santo André", "Anacleto Campanella"); 
 
 -- Example 13
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Bento", "São Bernardo", "Walter Ribeiro"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("São Bento", "São Bernardo", "Walter Ribeiro");
 
 -- Example 14
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Juventus", "Portuguesa", "Conde Rodolfo Crespi"), 
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Juventus", "Portuguesa", "Conde Rodolfo Crespi"); 
 
 -- Example 15
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Santos", "São Paulo", "Vila Belmiro"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Santos", "São Paulo", "Vila Belmiro");
 
 -- Example 16
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Corinthians", "Palmeiras", "Arena Corinthians"), 
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Corinthians", "Palmeiras", "Arena Corinthians"); 
 
 -- Example 17
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Fluminense", "Vasco", "Maracanã"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Fluminense", "Vasco", "Maracanã");
 
 -- Example 18
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Botafogo", "Flamengo", "Engenhão"), 
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Botafogo", "Flamengo", "Engenhão"); 
 
 -- Example 19
-INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES("Internacional", "Grêmio", "Beira-Rio"),
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES("Internacional", "Grêmio", "Beira-Rio");
 
 -- Example 20
 INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ("Cruzeiro", "Atlético-MG", "Mineirão");
 
-INSERT INTO DataHora (ID_Evento, DataHora) VALUES (1, 73453453), 
-(2, 453783453), (3, 453453453), (4, 453453783), 
-(5, 4534537834), (6, 4534345345), (7, 4534213453), 
-(8, 453453), (9, 45345345), (10, 4534532), 
-(11, 7827821), (12, 87637243), (13, 53412345), 
-(14, 7427243), (15, 4532402), (16, 74845234531), 
-(17, 45345345), (18, 4534531235), (19, 453453453), 
-(20, 4537453);
 
+-- INSERINDO DATA HORA
+-- Example 1
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (1, TO_TIMESTAMP('2021-01-01 08:00:00', 'YYYY-MM-DD HH24:MI:SS')), 
+
+-- Example 2
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (2, TO_TIMESTAMP('2021-01-02 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 3
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (3, TO_TIMESTAMP('2021-01-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 4
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (4, TO_TIMESTAMP('2021-01-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')), 
+
+-- Example 5
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (5, TO_TIMESTAMP('2021-01-02 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 6
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (6, TO_TIMESTAMP('2021-04-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 7
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (7, TO_TIMESTAMP('2021-04-05 10:00:00', 'YYYY-MM-DD HH24:MI:SS')), 
+
+-- Example 8
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (8, TO_TIMESTAMP('2021-01-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 9
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (9, TO_TIMESTAMP('2021-01-08 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 10
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (10, TO_TIMESTAMP('2021-01-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')), 
+
+-- Example 11
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (11, TO_TIMESTAMP('2021-09-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 12
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (12, TO_TIMESTAMP('2021-01-04 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 13
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (13, TO_TIMESTAMP('2021-07-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')), 
+
+-- Example 14
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (14, TO_TIMESTAMP('2021-01-08 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 15
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (15, TO_TIMESTAMP('2021-01-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 16
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (16, TO_TIMESTAMP('2021-01-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')), 
+
+-- Example 17
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (17, TO_TIMESTAMP('2021-01-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 18
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (18, TO_TIMESTAMP('2021-10-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+
+-- Example 19
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (19, TO_TIMESTAMP('2021-01-12 10:00:00', 'YYYY-MM-DD HH24:MI:SS')), 
+
+-- Example 20
+INSERT INTO DataHora (ID_Evento, DataHora) VALUES (20, TO_TIMESTAMP('2021-01-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+
+-- INSERINDO BONUS
 INSERT INTO Bonus (CPF, Codigo_Bonus, Valor) VALUES ('244.244.244-23', 'BONUS10', 35.00),
 ('123.456.789-12', 'BONUS20', 45.00), ('987.654.321-98', 'BONUS30', 245.00), 
 ('555.111.444-99', 'BONUS40', 40.00), ('777.888.999-11', 'BONUS50', 45.00), 
