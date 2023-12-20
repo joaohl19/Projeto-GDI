@@ -13,27 +13,15 @@ DROP TABLE Resultado;
 DROP TABLE Ambos_Marcam;
 DROP TABLE Apostar;
 
-CREATE SEQUENCE seq_conta
-    START WITH 1
-    INCREMENT BY 1
-    NOCACHE
-    NOCYCLE;
+CREATE SEQUENCE seq_conta START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
 
-CREATE SEQUENCE seq_aposta
-    START WITH 1
-    INCREMENT BY 1
-    NOCACHE
-    NOCYCLE;
+CREATE SEQUENCE seq_aposta START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
 
-CREATE SEQUENCE seq_evento
-    START WITH 1
-    INCREMENT BY 1
-    NOCACHE
-    NOCYCLE;
+CREATE SEQUENCE seq_evento START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
 
 CREATE TABLE Pessoas (
     Nome VARCHAR2(255),
-    Endereço VARCHAR2(255),
+    Endereco VARCHAR2(255),
     CPF VARCHAR2(20),
     Nascimento DATE,
     CPF_Indica VARCHAR2(20),
@@ -63,7 +51,7 @@ CREATE TABLE Dados_Bancarios (
 CREATE TABLE Pessoas_movimentam_contas (
     CPF VARCHAR2(20),
     ID_Conta NUMBER,
-    Valor DECIMAL(10,2) CHECK (Valor > 0),
+    Valor DECIMAL(10,2),
     DataHora TIMESTAMP,
     CONSTRAINT pmc_pk PRIMARY KEY (CPF, ID_Conta),
     CONSTRAINT pmc_fk_cpf FOREIGN KEY (CPF) REFERENCES Pessoas(CPF),
@@ -92,7 +80,7 @@ CREATE TABLE Aposta (
 CREATE TABLE Bonus (
     CPF VARCHAR2(20),
     Codigo_Bonus VARCHAR2(20),
-    Valor DECIMAL(10,2) CHECK (Valor > 0),
+    Valor DECIMAL(10,2),
     CONSTRAINT bonus_fk FOREIGN KEY (CPF) REFERENCES Pessoas(CPF)
 );
 
@@ -117,7 +105,7 @@ CREATE TABLE Resultado (
 
 CREATE TABLE Ambos_Marcam (
     ID_Aposta NUMBER,
-    Sim_Nao VARCHAR2(3) CHECK (Sim_Nao = 'Sim' OR Sim_Nao = 'Não'),
+    Sim_Nao VARCHAR2(3),
     CONSTRAINT ambos_marcam_fk FOREIGN KEY (ID_Aposta) REFERENCES Aposta(ID_Aposta)
 );
 
@@ -126,7 +114,7 @@ CREATE TABLE Apostar (
     ID_Conta NUMBER,
     ID_Evento NUMBER,
     ID_Aposta NUMBER,
-    Valor DECIMAL(10,2) CHECK (Valor > 0),
+    Valor DECIMAL(10,2),
     CONSTRAINT apostar_pk PRIMARY KEY (CPF, ID_Conta, ID_Evento, ID_Aposta),
     CONSTRAINT apostar_fk_cpf FOREIGN KEY (CPF) REFERENCES Pessoas(CPF),
     CONSTRAINT apostar_fk_id_conta FOREIGN KEY (ID_Conta) REFERENCES Conta(ID_Conta),
