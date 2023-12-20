@@ -185,64 +185,46 @@ INSERT INTO Conta (Saldo) VALUES (70.00);
 
 --INSERINDO PESSOAS MOVIMENTAM CONTAS
 -- Example 1
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('244.244.244-23', 1,  90.00, To_TI);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('244.244.244-23', 1, 90.00, TO_TIMESTAMP('2021-01-01 08:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 2
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('123.456.789-12', 2,  764.00, 987654322);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('123.456.789-12', 2, 764.00, TO_TIMESTAMP('2021-01-02 09:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 3
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('987.654.321-98', 3,  2301.00, 345678912);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('987.654.321-98', 3, 2301.00, TO_TIMESTAMP('2021-01-03 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 4
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('555.111.444-99', 4,  88.00, 678912345);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('555.111.444-99', 4, 88.00, TO_TIMESTAMP('2021-01-04 11:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 5
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('777.888.999-11', 5,  456.00, 123456789);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('777.888.999-11', 5, 456.00, TO_TIMESTAMP('2021-01-05 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 6
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('111.222.333-44', 6,  7843.00, 234567890);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('111.222.333-44', 6, 7843.00, TO_TIMESTAMP('2021-01-06 13:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 7
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.555.777-00', 7,  92.00, 456789123);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.555.777-00', 7, 92.00, TO_TIMESTAMP('2021-01-07 14:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 8
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('666.999.222-55', 8,  120.00, 567891234);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('666.999.222-55', 8, 120.00, TO_TIMESTAMP('2021-01-08 15:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 9
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('222.333.444-55', 9,  432.00, 789123456);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('222.333.444-55', 9, 432.00, TO_TIMESTAMP('2021-01-09 16:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 10
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('888.777.666-22', 10,  7645.00, 891234567);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('888.777.666-22', 10, 7645.00, TO_TIMESTAMP('2021-01-10 17:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 11
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('999.888.777-66', 11,  123.00, 234567891);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('999.888.777-66', 11, 123.00, TO_TIMESTAMP('2021-01-11 18:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 12
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('444.333.222-11', 12,  678.00, 456789123);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('444.333.222-11', 12, 678.00, TO_TIMESTAMP('2021-01-12 19:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 13
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('777.666.555-44', 13,  94.00, 567891234);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('777.666.555-44', 13, 94.00, TO_TIMESTAMP('2021-01-13 20:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 14
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('222.333.444-55', 14,  5678.00, 789123456);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('222.333.444-55', 14, 5678.00, TO_TIMESTAMP('2021-01-14 21:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 15
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('666.555.444-11', 15,  983.00, 891234567);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('666.555.444-11', 15, 983.00, TO_TIMESTAMP('2021-01-15 22:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 16
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.222.111-99', 16,  1234.00, 345678912);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.222.111-99', 16, 1234.00, TO_TIMESTAMP('2021-01-16 23:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 17
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('888.777.666-22', 17,  567.00, 456789123);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('888.777.666-22', 17, 567.00, TO_TIMESTAMP('2021-01-17 08:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 18
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.555.777-00', 18,  76.00, 567891234);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.555.777-00', 18, 76.00, TO_TIMESTAMP('2021-01-18 09:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 19
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('777.666.555-44', 19,  4567.00, 789123456);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('777.666.555-44', 19, 4567.00, TO_TIMESTAMP('2021-01-19 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
--- Example 20
-INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.565.777-00', 20,  89.00, 891234567);
+INSERT INTO Pessoas_movimentam_contas(CPF, ID_Conta, Valor, DataHora) VALUES ('333.555.777-00', 20, 89.00, TO_TIMESTAMP('2021-01-20 11:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
 
 -- INSERINDO DADOS BANCÁRIOS
 -- Example 1
