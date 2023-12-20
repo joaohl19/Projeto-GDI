@@ -1,64 +1,64 @@
 --INSERINDO PESSOAS
 
 -- Instance 1
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('João Pedro', 'Rua um 24', '244.244.244-23', '2002-02-24', '333.555.777-00');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('João Pedro', 'Rua um 24', '244.244.244-23', '2002-02-24', '333.555.777-00');
 
 -- Instance 2
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Maria Silva', 'Avenida dois 36', '123.456.789-12', '1995-07-15', '244.244.244-23');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Maria Silva', 'Avenida dois 36', '123.456.789-12', '1995-07-15', '244.244.244-23');
 
 -- Instance 3
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Carlos Oliveira', 'Praça três 48', '987.654.321-98', '1980-11-10', '123.456.789-12');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Carlos Oliveira', 'Praça três 48', '987.654.321-98', '1980-11-10', '123.456.789-12');
 
 -- Instance 4
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Ana Souza', 'Alameda quatro 12', '555.111.444-99', '1988-05-30', '987.654.321-98');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Ana Souza', 'Alameda quatro 12', '555.111.444-99', '1988-05-30', '987.654.321-98');
 
 -- Instance 5
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Lucas Santos', 'Estrada cinco 92', '777.888.999-11', '1999-09-18', '555.111.444-99');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Lucas Santos', 'Estrada cinco 92', '777.888.999-11', '1999-09-18', '555.111.444-99');
 
 -- Instance 6
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Isabel Oliveira', 'Avenida seis 17', '111.222.333-44', '1985-03-12', '777.888.999-11');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Isabel Oliveira', 'Avenida seis 17', '111.222.333-44', '1985-03-12', '777.888.999-11');
 
 -- Instance 7
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Rodrigo Lima', 'Rua sete 59', '333.555.777-00', '1992-12-01', '111.222.333-44');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Rodrigo Lima', 'Rua sete 59', '333.555.777-00', '1992-12-01', '111.222.333-44');
 
 -- Instance 8
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Mariana Costa', 'Avenida oito 23', '666.999.222-55', '1983-08-22', '333.555.777-00');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Mariana Costa', 'Avenida oito 23', '666.999.222-55', '1983-08-22', '333.555.777-00');
 
 -- Instance 9
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Pedro Rocha', 'Praça nove 78', '222.333.444-55', '1991-06-07', '666.999.222-55');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Pedro Rocha', 'Praça nove 78', '222.333.444-55', '1991-06-07', '666.999.222-55');
 
 -- Instance 10
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Fernanda Pereira', 'Rua dez 42', '888.777.666-22', '1987-04-15', '222.333.444-55');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Fernanda Pereira', 'Rua dez 42', '888.777.666-22', '1987-04-15', '222.333.444-55');
 
 -- Instance 11
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Gabriel Santos', 'Avenida onze 88', '999.888.777-66', '1994-10-05', '888.777.666-22');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Gabriel Santos', 'Avenida onze 88', '999.888.777-66', '1994-10-05', '888.777.666-22');
 
 -- Instance 12
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Amanda Lima', 'Rua doze 33', '444.333.222-11', '1997-07-20', '999.888.777-66');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Amanda Lima', 'Rua doze 33', '444.333.222-11', '1997-07-20', '999.888.777-66');
 
 -- Instance 13
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Rafaela Oliveira', 'Praça treze 54', '111.222.333-44', '1986-04-25', '444.333.222-11');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Rafaela Oliveira', 'Praça treze 54', '111.222.333-44', '1986-04-25', '444.333.222-11');
 
 -- Instance 14
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Bruno Costa', 'Alameda quatorze 77', '555.444.333-22', '1990-02-15', '111.222.333-44');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Bruno Costa', 'Alameda quatorze 77', '555.444.333-22', '1990-02-15', '111.222.333-44');
 
 -- Instance 15
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Carolina Pereira', 'Estrada quinze 21', '777.666.555-44', '1998-11-08', '555.444.333-22');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Carolina Pereira', 'Estrada quinze 21', '777.666.555-44', '1998-11-08', '555.444.333-22');
 
 -- Instance 16
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Matheus Rocha', 'Rua dezesseis 96', '222.333.444-55', '1989-08-18', '777.666.555-44');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Matheus Rocha', 'Rua dezesseis 96', '222.333.444-55', '1989-08-18', '777.666.555-44');
 
 -- Instance 17
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Isabella Lima', 'Avenida dezessete 12', '666.555.444-11', '1996-06-03', '222.333.444-55');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Isabella Lima', 'Avenida dezessete 12', '666.555.444-11', '1996-06-03', '222.333.444-55');
 
 -- Instance 18
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Henrique Costa', 'Praça dezoito 45', '333.222.111-99', '1984-03-30', '666.555.444-11');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Henrique Costa', 'Praça dezoito 45', '333.222.111-99', '1984-03-30', '666.555.444-11');
 
 -- Instance 19
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Laura Santos', 'Alameda dezenove 78', '888.777.666-22', '1993-12-10', '333.222.111-99');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Laura Santos', 'Alameda dezenove 78', '888.777.666-22', '1993-12-10', '333.222.111-99');
 
 -- Instance 20
-INSERT INTO Pessoas(Nome, Endereço, CPF, Nascimento, CPF_Indica) VALUES ('Felipe Oliveira', 'Rua vinte 54', '333.555.777-00', '1982-01-22', '888.777.666-22');
+INSERT INTO Pessoas(Nome, Endereco, CPF, Nascimento, CPF_Indica) VALUES ('Felipe Oliveira', 'Rua vinte 54', '333.555.777-00', '1982-01-22', '888.777.666-22');
 
 
 --INSERINDO TELEFONES
