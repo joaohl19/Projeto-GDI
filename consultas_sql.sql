@@ -30,6 +30,7 @@ SELECT ID_Evento
 FROM Evento_Esportivo
 WHERE Mandante = 'Botafogo' AND Visitante = 'Flamengo';
 
+
 --BETWEEN
 SELECT *
 FROM CONTA
@@ -55,25 +56,85 @@ FROM Telefones
 WHERE Celular IS NOT NULL;
 
 --INNER JOIN
-
+SELECT Evento_Esportivo.Mandante, Evento_Esportivo.Visitante, Evento_Esportivo.Estadio, DataHora.ID_Evento, DataHora.DataHora
+FROM DataHora
+INNER JOIN Evento_Esportivo ON Evento_Esportivo.ID_Evento = DataHora.ID_Evento;
 
 --MAX
-
+SELECT MAX(SALDO)
+FROM Conta;
 
 --MIN
-
+SELECT MIN(VALOR)
+FROM Pessoas_movimentam_contas;
 
 --AVG
+SELECT AVG(VALOR)
+FROM Pessoas_movimentam_contas;
+
 --COUNT
---LEFT ou RIGHT ou FULL OUTER JOIN 
+SELECT COUNT(*) AS highest_deposits
+FROM Pessoas_movimentam_contas
+WHERE VALOR > 1000;
+
+--LEFT ou RIGHT ou FULL OUTER JOIN
+SELECT Pessoas.Nome, Pessoas.CPF, Pessoas_movimentam_contas.Valor
+FROM Pessoas
+LEFT JOIN Pessoas_movimentam_contas ON Pessoas.CPF = Pessoas_movimentam_contas.CPF;
+
 --SUBCONSULTA COM OPERADOR RELACIONAL
 --SUBCONSULTA COM IN
---SUBCONSULTA COM ANY
---SUBCONSULTA COM ALL
---ORDER BY
---GROUP BY
---HAVING
---UNION ou INTERSECT ou MINUS
---CREATE VIEW
---GRANT / REVOKE
+SELECT Nome
+FROM Pessoas
+WHERE CPF IN (
+    SELECT CPF
+    FROM Pessoas_movimentam_contas
+);
 
+--SUBCONSULTA COM ANY
+SELECT Nome
+FROM Pessoas
+WHERE CPF = ANY (
+    SELECT CPF
+    FROM Telefones
+);
+
+--SUBCONSULTA COM ALL***
+SELECT ID_Evento
+FROM Evento_Esportivo
+WHERE ID_Evento = ALL (
+    SELECT ID_Evento
+    FROM Apostar
+    WHERE Valor > 100.00
+);
+
+--ORDER BY
+SELECT *
+FROM Pessoas_movimentam_contas
+ORDER BY VALOR DESC;
+
+--GROUP BY
+SELECT COUNT (Saldo) as contas, Saldo as valores_saldo
+FROM CONTA
+GROUP BY Saldo;
+
+--HAVING
+SELECT COUNT (Saldo) as contas, Saldo as valores_saldo
+FROM CONTA
+GROUP BY Saldo
+HAVING Saldo > 100;
+
+--UNION ou INTERSECT ou MINUS
+SELECT CPF
+FROM Pessoas
+MINUS
+SELECT CPF
+FROM Pessoas_movimentam_contas;
+
+--CREATE VIEW***
+CREATE VIEW [FogaoMengudo] AS
+SELECT ID_Evento
+FROM Evento_Esportivo
+WHERE Mandante = 'Botafogo' AND Visitante = 'Flamengo';
+
+--GRANT / REVOKE
