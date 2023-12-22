@@ -105,13 +105,13 @@ WHERE CPF = ANY (
     FROM Telefones
 );
 
---SUBCONSULTA COM ALL***
-SELECT ID_Evento
-FROM Evento_Esportivo
-WHERE ID_Evento = ALL (
-    SELECT ID_Evento
-    FROM Apostar
-    WHERE Valor > 100.00
+--SUBCONSULTA COM ALL
+SELECT *
+FROM Gols
+WHERE Quantidade > ALL (
+    SELECT ID_Aposta 
+    FROM Aposta 
+    WHERE Aposta.ID_Aposta = Gols.ID_Aposta
 );
 
 --ORDER BY
