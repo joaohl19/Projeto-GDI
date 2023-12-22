@@ -33,6 +33,7 @@ BEGIN
    DBMS_OUTPUT.PUT_LINE('Valor para Chave1: ' || tabela1('Chave1'));
    DBMS_OUTPUT.PUT_LINE('Valor para Chave2: ' || tabela1('Chave2'));
 END;
+
 --BLOCO ANÔNIMO
 DECLARE
    ID_conta NUMBER;
@@ -45,6 +46,7 @@ BEGIN
       Contador := Contador + 1;
    END LOOP;
 END;
+
 --CREATE PROCEDURE
 CREATE PROCEDURE ConsultaPartidas
     @TIME1 VARCHAR2(255),
@@ -55,6 +57,7 @@ BEGIN
     FROM Evento_Esportivo
     WHERE Mandante = @TIME1 OR Visitante = @TIME2;
 END;
+
 --CREATE FUNCTION
 --%TYPE
 --%ROWTYPE
@@ -69,6 +72,7 @@ END;
 --USO DE PAR METROS (IN, OUT ou IN OUT)
 --CREATE OR REPLACE PACKAGE
 --CREATE OR REPLACE PACKAGE BODY
+
 --CREATE OR REPLACE TRIGGER (COMANDO)
 -- Trigger para impedir que uma pessoa seja excluída se ela possuir apostas associadas
 CREATE OR REPLACE TRIGGER BEFORE_DELETE_PESSOAS
