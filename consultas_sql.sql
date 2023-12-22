@@ -30,7 +30,6 @@ SELECT ID_Evento
 FROM Evento_Esportivo
 WHERE Mandante = 'Botafogo' AND Visitante = 'Flamengo';
 
-
 --BETWEEN
 SELECT *
 FROM CONTA
@@ -83,6 +82,13 @@ FROM Pessoas
 LEFT JOIN Pessoas_movimentam_contas ON Pessoas.CPF = Pessoas_movimentam_contas.CPF;
 
 --SUBCONSULTA COM OPERADOR RELACIONAL
+SELECT Saldo
+FROM Conta
+WHERE Saldo > (
+    SELECT AVG(Saldo)
+    FROM Conta
+);
+
 --SUBCONSULTA COM IN
 SELECT Nome
 FROM Pessoas
@@ -131,10 +137,19 @@ MINUS
 SELECT CPF
 FROM Pessoas_movimentam_contas;
 
---CREATE VIEW***
-CREATE VIEW [FogaoMengudo] AS
+--CREATE VIEW
+CREATE VIEW FogaoMengudo AS
 SELECT ID_Evento
 FROM Evento_Esportivo
 WHERE Mandante = 'Botafogo' AND Visitante = 'Flamengo';
 
 --GRANT / REVOKE
+CREATE USER jp IDENTIFIED BY jp123;
+CONNECT jp/jp123;
+GRANT SELECT ON Pessoas TO jp;
+
+SELECT * FROM Pessoas;
+
+REVOKE SELECT ON Pessoas FROM jp;
+
+SELECT * FROM Pessoas;
