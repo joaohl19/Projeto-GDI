@@ -1,0 +1,79 @@
+--ALTER TABLE
+ALTER TABLE TELEFONES
+ADD Celular VARCHAR2(20)
+
+--CREATE INDEX
+CREATE INDEX index_pessoas
+ON PESSOAS (NOME, ENDERECO, CPF, NASCIMENTO, CPF_INDICA);
+
+--INSERT INTO
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ('Manchester City', 'Fluminense', 'King Abdullah Sports City');
+
+--UPDATE
+UPDATE DADOS_BANCARIOS
+SET AGENCIA ='4522-2'
+WHERE ID_CONTA = 13;
+
+--DELETE
+--deletando as dependências
+DELETE FROM Apostar 
+WHERE ID_Evento = 18;
+DELETE FROM DataHora
+WHERE ID_Evento = 18;
+
+--deletando o evento
+DELETE FROM Evento_Esportivo
+WHERE ID_Evento = 18;
+
+--SELECT-FROM-WHERE
+SELECT ID_Evento
+FROM Evento_Esportivo
+WHERE Mandante = 'Botafogo' AND Visitante = 'Flamengo';
+
+--BETWEEN
+SELECT *
+FROM CONTA
+WHERE SALDO BETWEEN 500 AND 1000
+
+--IN
+SELECT *
+FROM Evento_Esportivo
+WHERE Mandante IN ('Fluminense', 'Sport', 'São Paulo');
+
+--LIKE
+SELECT * 
+FROM Pessoas_movimentam_contas
+WHERE CPF LIKE '2__.___.___-__' ;
+
+--IS NULL ou IS NOT NULL
+UPDATE Telefones
+SET Celular = '8199113-1829'
+WHERE CPF = '244.244.244-23'
+
+SELECT *
+FROM Telefones
+WHERE Celular IS NOT NULL;
+
+--INNER JOIN
+
+
+--MAX
+
+
+--MIN
+
+
+--AVG
+--COUNT
+--LEFT ou RIGHT ou FULL OUTER JOIN 
+--SUBCONSULTA COM OPERADOR RELACIONAL
+--SUBCONSULTA COM IN
+--SUBCONSULTA COM ANY
+--SUBCONSULTA COM ALL
+--ORDER BY
+--GROUP BY
+--HAVING
+--UNION ou INTERSECT ou MINUS
+--CREATE VIEW
+--GRANT / REVOKE
+

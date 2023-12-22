@@ -119,3 +119,4 @@ CREATE TABLE Apostar (
     CONSTRAINT apostar_fk_id_evento FOREIGN KEY (ID_Evento) REFERENCES Evento_Esportivo(ID_Evento),
     CONSTRAINT apostar_fk_id_aposta FOREIGN KEY (ID_Aposta) REFERENCES Aposta(ID_Aposta)
 );
+
