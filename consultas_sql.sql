@@ -23,7 +23,7 @@ WHERE ID_Evento = 17;
 
 --deletando o evento
 DELETE FROM Evento_Esportivo
-WHERE ID_Evento = 18;
+WHERE ID_Evento = 17;
 
 --SELECT-FROM-WHERE
 SELECT ID_Evento
