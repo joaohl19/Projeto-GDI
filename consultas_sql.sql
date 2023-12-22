@@ -17,9 +17,9 @@ WHERE ID_CONTA = 13;
 --DELETE
 --deletando as dependências
 DELETE FROM Apostar 
-WHERE ID_Evento = 18;
+WHERE ID_Evento = 17;
 DELETE FROM DataHora
-WHERE ID_Evento = 18;
+WHERE ID_Evento = 17;
 
 --deletando o evento
 DELETE FROM Evento_Esportivo
