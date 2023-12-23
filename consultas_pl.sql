@@ -262,6 +262,37 @@ BEGIN
 END;
 
 
+--EXCEPTION WHEN
+CREATE OR REPLACE PROCEDURE inserir_pessoa(
+    p_nome VARCHAR2,
+    p_endereco VARCHAR2,
+    p_cpf VARCHAR2,
+    p_nascimento DATE,
+    p_cpf_indica VARCHAR2
+)
+AS
+BEGIN
+    -- Tenta inserir uma pessoa na tabela Pessoas
+    INSERT INTO Pessoas (Nome, Endereco, CPF, Nascimento, CPF_Indica)
+    VALUES (p_nome, p_endereco, p_cpf, p_nascimento, p_cpf_indica);
+
+    -- Se a inserção for bem-sucedida, exibe uma mensagem
+    DBMS_OUTPUT.PUT_LINE('Pessoa inserida com sucesso!');
+EXCEPTION
+    -- Captura exceções específicas
+    WHEN DUP_VAL_ON_INDEX THEN
+        DBMS_OUTPUT.PUT_LINE('Erro: CPF já existente na tabela Pessoas!');
+    WHEN OTHERS THEN
+        -- Captura outras exceções não tratadas
+        DBMS_OUTPUT.PUT_LINE('Erro inesperado: ' || SQLERRM);
+END;
+/
+
+-- Exemplo de uso do procedimento que gera exceção
+BEGIN
+    inserir_pessoa('João', 'Rua A', '12345678901', SYSDATE, '98765432109');
+END;
+/
 
 --USO DE PARAMETROS (IN, OUT ou IN OUT)
 CREATE OR REPLACE PROCEDURE AtualizarSaldo (
