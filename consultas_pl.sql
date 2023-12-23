@@ -38,7 +38,7 @@ BEGIN
 END;
 /
 
---BLOCO ANÔNIMO + SELECT … INTO
+--BLOCO ANÔNIMO
 DECLARE
    ID_conta NUMBER;
    Saldo DECIMAL(10, 2);
@@ -52,8 +52,7 @@ BEGIN
 END;
 /
 
-
---CREATE PROCEDURE
+--CREATE PROCEDURE + SELECT … INTO
 CREATE OR REPLACE PROCEDURE CONSULTA_PARTIDAS(TIME1 IN VARCHAR2, TIME2 IN VARCHAR2) AS
     COLUNA_AUX NUMBER;
 BEGIN
@@ -89,7 +88,6 @@ BEGIN
 
     RETURN Porcentagem;
 END;
-
 
 --%TYPE
 --Salva o tipo de uma coluna em uma variável
@@ -419,6 +417,9 @@ BEGIN
 END;
 /
 
+-- Teste do trigger
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ('TimeA', 'TimeB', 'EstadioX');
+
 --CREATE OR REPLACE TRIGGER (LINHA)
 -- Trigger para impedir que seja inserida uma conta com saldo negativo
 CREATE OR REPLACE TRIGGER VerificarSaldoNegativo
@@ -431,3 +432,6 @@ BEGIN
     END IF;
 END;
 /
+
+-- Teste do trigger
+INSERT INTO Conta (Saldo) VALUES (-100.00);
