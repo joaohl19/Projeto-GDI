@@ -116,8 +116,20 @@ BEGIN
     FROM Pessoas
     WHERE CPF = p_pessoas_id;
 
+    DBMS_OUTPUT.PUT_LINE('Rowtype: ' || v_pessoas_info.CPF);
+
     RETURN v_pessoas_info;
 END;
+/
+
+-- First call
+DECLARE
+    v_result1 Pessoas%ROWTYPE;
+BEGIN
+    v_result1 := get_pessoas_info('111.222.333-44');
+END;
+/
+
 
 
 --IF ELSIF
@@ -127,11 +139,10 @@ CREATE OR REPLACE PROCEDURE check_account_status(ID_Conta IN NUMBER)
 IS
     c_saldo DECIMAL(10, 2);
 BEGIN
-
     SELECT Saldo
     INTO c_saldo
     FROM Conta
-    WHERE ID_Conta = ID_Conta;
+    WHERE ID_Conta = check_account_status.ID_Conta; -- Fix the typo here
 
     IF c_saldo > 0 THEN
         DBMS_OUTPUT.PUT_LINE('Pode apostar');
@@ -141,6 +152,13 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('Não pode apostar');
     END IF;
 END;
+/
+
+BEGIN
+    check_account_status(4);
+END;
+/
+
 
 
 
@@ -154,7 +172,7 @@ BEGIN
     SELECT Saldo
     INTO c_saldo
     FROM Conta
-    WHERE ID_Conta = ID_Conta;
+    WHERE ID_Conta = check_account_status.ID_Conta; 
 
     CASE
         WHEN c_saldo > 0 THEN
@@ -165,6 +183,12 @@ BEGIN
             DBMS_OUTPUT.PUT_LINE('Não pode apostar');
     END CASE;
 END;
+/
+
+BEGIN
+    check_account_status(4);
+END;
+/
 
 
 --EXIT LOOP WHEN
@@ -211,6 +235,12 @@ BEGIN
 
     DBMS_OUTPUT.PUT_LINE('Saldo total da tabela: ' || v_saldo_total);
 END;
+/
+
+BEGIN
+    calculate_total_balance;
+END;
+/
 
 --WHILE LOOP
 --Loop para somar o saldo de todas as contas
@@ -218,19 +248,26 @@ END;
 CREATE OR REPLACE PROCEDURE calculate_total_balance
 IS
     v_saldo_total DECIMAL(10, 2) := 0;
+    v_current_saldo DECIMAL(10, 2); -- New variable to store the current saldo
     CURSOR Conta_cursor IS
-        SELECT Saldo FROM Contas;
+        SELECT Saldo FROM Conta;
 BEGIN
     OPEN Conta_cursor;
     LOOP
-        FETCH Conta_cursor INTO v_saldo_total;
+        FETCH Conta_cursor INTO v_current_saldo;
         EXIT WHEN Conta_cursor%NOTFOUND;
-        v_saldo_total := v_saldo_total + Conta_rec.Saldo;
+        v_saldo_total := v_saldo_total + v_current_saldo; -- Accumulate in v_saldo_total
     END LOOP;
     CLOSE Conta_cursor;
 
     DBMS_OUTPUT.PUT_LINE('Saldo total da tabela: ' || v_saldo_total);
 END;
+/
+    
+BEGIN
+    calculate_total_balance;
+END;
+/
 
 
 --SELECT … INTO
