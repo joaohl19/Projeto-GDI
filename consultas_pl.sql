@@ -382,6 +382,9 @@ BEGIN
 END;
 /
 
+-- Teste do trigger
+INSERT INTO Evento_Esportivo (Mandante, Visitante, Estadio) VALUES ('TimeA', 'TimeB', 'EstadioX');
+
 --CREATE OR REPLACE TRIGGER (LINHA)
 -- Trigger para impedir que seja inserida uma conta com saldo negativo
 CREATE OR REPLACE TRIGGER VerificarSaldoNegativo
@@ -394,3 +397,6 @@ BEGIN
     END IF;
 END;
 /
+
+-- Teste do trigger
+INSERT INTO Conta (Saldo) VALUES (-100.00);
