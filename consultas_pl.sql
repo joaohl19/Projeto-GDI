@@ -8,7 +8,7 @@ DECLARE
   -- Criando um objeto do tipo registro
   meu_registro Registro;
 BEGIN
-  -- atribuindo valores ao registro
+  -- Atribuindo valores ao registro
   meu_registro.id := 1;
   meu_registro.nome := 'João';
 
@@ -16,6 +16,7 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE('Nome: ' || meu_registro.nome);
   DBMS_OUTPUT.PUT_LINE('ID: ' || meu_registro.id);
 END;
+/
 
 --USO DE ESTRUTURA DE DADOS DO TIPO TABLE
 DECLARE
@@ -33,6 +34,7 @@ BEGIN
    DBMS_OUTPUT.PUT_LINE('Valor para Chave1: ' || tabela1('Chave1'));
    DBMS_OUTPUT.PUT_LINE('Valor para Chave2: ' || tabela1('Chave2'));
 END;
+/
 
 --BLOCO ANÔNIMO + SELECT … INTO
 DECLARE
@@ -46,6 +48,7 @@ BEGIN
       Contador := Contador + 1;
    END LOOP;
 END;
+/
 
 --CREATE PROCEDURE
 CREATE OR REPLACE PROCEDURE CONSULTA_PARTIDAS(TIME1 IN VARCHAR2, TIME2 IN VARCHAR2) AS
@@ -132,7 +135,7 @@ CREATE OR REPLACE PACKAGE BODY PacoteExemplo AS
             v_saldo_total := v_saldo_total + saldo_rec.Saldo;
         END LOOP;
 
-        -- Retornar o Saldo Total
+        -- Retorna o Saldo Total
         RETURN v_saldo_total;
     END CalcularSaldoTotal;
 END PacoteExemplo;
@@ -148,23 +151,14 @@ END;
 /
 
 --CREATE OR REPLACE TRIGGER (COMANDO)
--- Trigger para impedir que uma pessoa seja excluída se ela possuir apostas associadas
-CREATE OR REPLACE TRIGGER BEFORE_DELETE_PESSOAS
-BEFORE DELETE ON Pessoas
-FOR EACH ROW
+-- Trigger para printar o número de eventos esportivos após um insert
+CREATE OR REPLACE TRIGGER AfterInsertEvento
+AFTER INSERT ON Evento_Esportivo
 DECLARE
-    contador_apostas NUMBER;
+    num_eventos NUMBER;
 BEGIN
-    -- Verifica se a pessoa possui apostas
-    SELECT COUNT(*)
-    INTO contador_apostas
-    FROM Apostar
-    WHERE CPF = :OLD.CPF;
-
-    -- Se houver apostas, impede a exclusão
-    IF contador_apostas > 0 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Não é possível excluir uma pessoa com apostas.');
-    END IF;
+    SELECT COUNT(*) INTO num_eventos FROM Evento_Esportivo;
+    DBMS_OUTPUT.PUT_LINE('Número total de eventos esportivos: ' || num_eventos);
 END;
 /
 
