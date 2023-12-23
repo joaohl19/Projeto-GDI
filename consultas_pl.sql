@@ -168,7 +168,7 @@ END;
 
 
 --EXIT LOOP WHEN
---Sair do loop quando o saldo for maior que 0
+--Sair do loop quando o saldo for menor que 0
 
 CREATE OR REPLACE PROCEDURE check_account_status(ID_Conta IN NUMBER)
 IS
@@ -185,6 +185,15 @@ BEGIN
     END LOOP;
 END;
 
+-- Teste do EXIT LOOP
+UPDATE Conta
+SET Saldo = -100
+WHERE ID_Conta = 5;
+
+BEGIN
+    check_account_status(5);
+END;
+/
 
 --FOR IN LOOP
 --Loop para somar o saldo de todas as contas
