@@ -1,4 +1,5 @@
 --USO DE RECORD
+
 DECLARE
   -- Criando o tipo registro
   TYPE Registro IS RECORD (
@@ -18,6 +19,7 @@ BEGIN
 END;
 
 --USO DE ESTRUTURA DE DADOS DO TIPO TABLE
+
 DECLARE
    -- Definindo uma tabela indexada por valores
    TYPE Hashtable IS TABLE OF NUMBER INDEX BY VARCHAR2(255);
@@ -34,7 +36,9 @@ BEGIN
    DBMS_OUTPUT.PUT_LINE('Valor para Chave2: ' || tabela1('Chave2'));
 END;
 
+
 --BLOCO ANÔNIMO
+
 DECLARE
    ID_conta NUMBER;
    Saldo DECIMAL(10, 2);
@@ -47,7 +51,10 @@ BEGIN
    END LOOP;
 END;
 
+
+
 --CREATE PROCEDURE
+
 CREATE PROCEDURE ConsultaPartidas
     @TIME1 VARCHAR2(255),
     @TIME2 VARCHAR2(255)
@@ -58,17 +65,207 @@ BEGIN
     WHERE Mandante = @TIME1 OR Visitante = @TIME2;
 END;
 
---CREATE FUNCTION
+
+
+--CREATE FUNCTION 
+--Função para calcular a porcentagem de gols do mandante em um evento
+
+CREATE OR REPLACE FUNCTION PorcentagemGolMandante
+    (ID_Aposta NUMBER)
+    RETURN DECIMAL
+IS
+    TotalGols NUMBER;
+    Porcentagem NUMBER;
+BEGIN
+    SELECT SUM(Gol_Mandante + Gol_Visitante)
+    INTO TotalGols
+    FROM Placar_Exato
+    WHERE ID_Aposta = ID_Aposta;
+
+    SELECT (Gol_Mandante / TotalGols) * 100
+    INTO Porcentagem
+    FROM Placar_Exato
+    WHERE ID_Aposta = ID_Aposta;
+
+    RETURN Porcentagem;
+END;
+
+
 --%TYPE
+--Salva o tipo de uma coluna em uma variável
+
+DECLARE 
+    nome Pessoas.Nome%TYPE;
+    cpf Pessoas.CPF%TYPE;
+BEGIN
+    SELECT Nome, CPF
+    INTO nome, cpf
+    FROM Pessoas
+    WHERE CPF = '888.777.666-22';
+END;
+
+
 --%ROWTYPE
+--Salva o resultado de uma consulta em uma variável do tipo ROWTYPE
+
+CREATE OR REPLACE FUNCTION get_pessoas_info(p_pessoas_id IN Pessoas.CPF%TYPE)
+RETURN Pessoas%ROWTYPE
+IS
+    v_pessoas_info Pessoas%ROWTYPE;
+BEGIN
+    SELECT *
+    INTO v_pessoas_info
+    FROM Pessoas
+    WHERE CPF = p_pessoas_id;
+
+    RETURN v_pessoas_info;
+END;
+
+
 --IF ELSIF
+--Verifica se o saldo é maior que 0, menor que 0 ou igual a 0
+
+CREATE OR REPLACE PROCEDURE check_account_status(ID_Conta IN NUMBER)
+IS
+    c_saldo DECIMAL(10, 2);
+BEGIN
+
+    SELECT Saldo
+    INTO c_saldo
+    FROM Conta
+    WHERE ID_Conta = ID_Conta;
+
+    IF c_saldo > 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Pode apostar');
+    ELSIF c_saldo < 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Devendo');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Não pode apostar');
+    END IF;
+END;
+
+
+
 --CASE WHEN
---LOOP EXIT WHEN
---WHILE LOOP
+--Verifica se o saldo é maior que 0, menor que 0 ou igual a 0
+
+CREATE OR REPLACE PROCEDURE check_account_status(ID_Conta IN NUMBER)
+IS
+    c_saldo DECIMAL(10, 2);
+BEGIN
+    SELECT Saldo
+    INTO c_saldo
+    FROM Conta
+    WHERE ID_Conta = ID_Conta;
+
+    CASE
+        WHEN c_saldo > 0 THEN
+            DBMS_OUTPUT.PUT_LINE('Pode apostar');
+        WHEN c_saldo < 0 THEN
+            DBMS_OUTPUT.PUT_LINE('Devendo');
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Não pode apostar');
+    END CASE;
+END;
+
+
+
+--EXIT LOOP WHEN
+--Sair do loop quando o saldo for maior que 0
+
+CREATE OR REPLACE PROCEDURE check_account_status(ID_Conta IN NUMBER)
+IS
+    c_saldo DECIMAL(10, 2);
+BEGIN
+    SELECT Saldo
+    INTO c_saldo
+    FROM Conta
+    WHERE ID_Conta = ID_Conta;
+
+    LOOP
+        EXIT WHEN c_saldo > 0;
+        DBMS_OUTPUT.PUT_LINE('Saldo negativo');
+    END LOOP;
+END;
+
+
 --FOR IN LOOP
+--Loop para somar o saldo de todas as contas
+
+CREATE OR REPLACE PROCEDURE calculate_total_balance
+IS
+    v_saldo_total DECIMAL(10, 2) := 0;
+    CURSOR Conta_cursor IS
+        SELECT Saldo FROM Conta;
+BEGIN
+    FOR Conta_rec IN Conta_cursor
+    LOOP
+        v_saldo_total := v_saldo_total + Conta_rec.Saldo;
+    END LOOP;
+
+    DBMS_OUTPUT.PUT_LINE('Saldo total da tabela: ' || v_saldo_total);
+END;
+
+--WHILE LOOP
+--Loop para somar o saldo de todas as contas
+
+CREATE OR REPLACE PROCEDURE calculate_total_balance
+IS
+    v_saldo_total DECIMAL(10, 2) := 0;
+    CURSOR Conta_cursor IS
+        SELECT Saldo FROM Contas;
+BEGIN
+    OPEN Conta_cursor;
+    LOOP
+        FETCH Conta_cursor INTO v_saldo_total;
+        EXIT WHEN Conta_cursor%NOTFOUND;
+        v_saldo_total := v_saldo_total + Conta_rec.Saldo;
+    END LOOP;
+    CLOSE Conta_cursor;
+
+    DBMS_OUTPUT.PUT_LINE('Saldo total da tabela: ' || v_saldo_total);
+END;
+
+
 --SELECT … INTO
---CURSOR (OPEN, FETCH e CLOSE)
+--Seleciona o saldo de uma conta e o exibe
+
+CREATE OR REPLACE PROCEDURE get_account_balance(ID_Conta IN NUMBER)
+IS
+    v_saldo DECIMAL(10, 2);
+BEGIN
+    SELECT Saldo
+    INTO v_saldo
+    FROM Conta
+    WHERE ID_Conta = ID_Conta;
+
+    DBMS_OUTPUT.PUT_LINE('Saldo da conta: ' || v_saldo);
+END;
+
+--CURSOR (OPEN, FETCH e CLOSE) 
+--Exibe todas as pessoas cadastradas
+
+CREATE OR REPLACE PROCEDURE get_all_pessoas
+IS
+    CURSOR pessoas_cursor IS
+        SELECT *
+        FROM Pessoas;
+    v_pessoas pessoas_cursor%ROWTYPE;
+BEGIN
+    OPEN pessoas_cursor;
+    LOOP
+        FETCH pessoas_cursor INTO v_pessoas;
+        EXIT WHEN pessoas_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Nome: ' || v_pessoas.Nome || ', CPF: ' || v_pessoas.CPF);
+    END LOOP;
+    CLOSE pessoas_cursor;
+END;
+
+
 --EXCEPTION WHEN
+
+
+
 --USO DE PAR METROS (IN, OUT ou IN OUT)
 --CREATE OR REPLACE PACKAGE
 --CREATE OR REPLACE PACKAGE BODY
