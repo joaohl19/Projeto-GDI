@@ -32,6 +32,7 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
     Nascimento DATE,
     Telefones tp_telefones
 );
+
 /* TIPO CONTA + MÉTODO QUE COMPARA SALDO */
 CREATE OR REPLACE TYPE tp_conta AS OBJECT (
     ID_Conta NUMBER DEFAULT seq_conta.NEXTVAL,
@@ -326,17 +327,3 @@ CREATE TABLE tb_pessoas OF tp_pessoa(
     Nascimento NOT NULL,
     NESTED TABLE bonus_recebido STORE AS tb_lista_bonus
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
