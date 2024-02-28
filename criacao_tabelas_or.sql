@@ -1,19 +1,15 @@
-/* VER SE ESSE CREATE SEQUENCE TB FUNCIONA PRA ATRIBUTOS DE UM TIPO */
-CREATE SEQUENCE seq_conta START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
-CREATE SEQUENCE seq_evento START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
-
 /*TIPO ABSTRATO : DADOS BANCÁRIOS*/
 CREATE OR REPLACE TYPE tp_dados_bancarios AS OBJECT ( 
     Conta VARCHAR2(20), 
     Agencia VARCHAR2(20) 
-) NOT INSTANTIABLE NOT FINAL;
+) FINAL;
 
 
 /*TIPO TELEFONE + MÉTODO MAP QUE ORDENA AS INSTÂNCIAS PELO DDD */
 CREATE OR REPLACE TYPE tp_telefone AS OBJECT (
     Telefone VARCHAR2(20),
     MAP MEMBER FUNCTION codigo_postal RETURN VARCHAR2    
-);
+)FINAL;
 
 CREATE OR REPLACE TYPE BODY tp_telefone AS 
 MEMBER FUNCTION codigo_postal RETURN VARCHAR2 IS
@@ -24,22 +20,15 @@ END;
 /* CRIAÇÃO DO TIPO VARRAY: CADA PESSOA PODE TER NO MÁXIMO 3 TELEFONES */
 CREATE OR REPLACE TYPE tp_telefones AS VARRAY(3) OF tp_telefone;
 
-/* TIPO PESSOA */
 
 /* TIPO CONTA + MÉTODO QUE COMPARA SALDO */
 CREATE OR REPLACE TYPE tp_conta AS OBJECT (  
     ID_Conta NUMBER,  
     Saldo DECIMAL(10,2),  
-    Dados_Bancarios tp_dados_bancarios,  
-    CONSTRUCTOR FUNCTION tp_conta RETURN SELF AS RESULT,  
-    ORDER MEMBER FUNCTION compara_saldo(X tp_conta) RETURN INTEGER  
-);
+    Dados_Bancarios tp_dados_bancarios,    
+    ORDER MEMBER FUNCTION compara_saldo(X tp_conta) RETURN VARCHAR(10)  
+)FINAL;
 CREATE OR REPLACE TYPE BODY tp_conta AS  
-CONSTRUCTOR FUNCTION tp_conta RETURN SELF AS RESULT IS 
-    BEGIN 
-        SELF.ID_Conta := seq_conta.NEXTVAL; 
-        RETURN; 
-    END; 
 ORDER MEMBER FUNCTION compara_saldo(X tp_conta)  
 RETURN VARCHAR(10) IS 
 BEGIN 
@@ -60,19 +49,14 @@ CREATE OR REPLACE TYPE tp_evento_esportivo AS OBJECT (
     Estadio VARCHAR2(255), 
     ID_Evento NUMBER, 
     DataHora TIMESTAMP, 
-    CONSTRUCTOR FUNCTION tp_evento_esportivo RETURN SELF AS RESULT, 
      
     MEMBER PROCEDURE exibir_partida(SELF tp_evento_esportivo), 
  
     FINAL MAP MEMBER FUNCTION mapear_datahora RETURN TIMESTAMP 
 );
 
-CREATE OR REPLACE TYPE BODY tp_evento_esportivo AS
-CONSTRUCTOR FUNCTION tp_evento_esportivo RETURN SELF AS RESULT IS 
-    BEGIN 
-        SELF.ID_Evento := seq_conta.NEXTVAL; 
-        RETURN; 
-    END; 
+CREATE OR REPLACE TYPE BODY tp_evento_esportivo AS  
+ 
 MEMBER PROCEDURE exibir_partida(SELF tp_evento_esportivo) IS 
 BEGIN 
 DBMS_OUTPUT.PUT_LINE(Mandante || "  X  " || Visitante); 
@@ -95,12 +79,12 @@ CREATE OR REPLACE TYPE tp_bonus AS OBJECT (
     MEMBER FUNCTION bonus_turbinado RETURN NUMBER 
 );
 CREATE OR REPLACE TYPE BODY tp_bonus AS 
-MEMBER FUNCTION saldo_pos_bonus RETURN NUMBER IS 
-val_bonus DECIMAL(10,2) = valor; 
+MEMBER FUNCTION bonus_turbinado RETURN NUMBER IS 
+val_bonus DECIMAL(10,2) := valor; 
 BEGIN 
-    IF (código_bonus = "Bolsonaro22") THEN  
-        SELF.valor = valor * valor; 
-    RETURn SELF.valor; 
+    IF (código_bonus = 'JOAO19') THEN  
+        SELF.valor := valor * valor; 
+    RETURN SELF.valor; 
 END; 
 END;
 
@@ -109,7 +93,7 @@ CREATE OR REPLACE TYPE tp_apostas AS OBJECT (
     ID_Aposta NUMBER, 
     Odd NUMBER(5, 2), 
     NOT FINAL MAP MEMBER FUNCTION aposta_odd RETURN NUMBER 
-)NOT FINAL;
+)NOT INSTANTIABLE NOT FINAL;
 CREATE OR REPLACE TYPE BODY tp_apostas AS  
 NOT FINAL MAP MEMBER FUNCTION aposta_odd IS 
 BEGIN 
@@ -127,7 +111,7 @@ CONSTRUCTOR FUNCTION tp_gols(X tp_apostas, Quantidade INT) RETURN SELF AS RESULT
 BEGIN
     SELF.ID_Aposta := X.ID_Aposta,
     SELF.Quantidade := Quantidade
-    RETURN;
+    RETURN SELF;
 END;
 END;
 
@@ -139,7 +123,7 @@ CREATE OR REPLACE TYPE tp_placar UNDER tp_apostas(
     OVERRIDING FINAL MEMBER FUNCTION aposta_odd RETURN NUMBER
 )FINAL;
 CREATE OR REPLACE TYPE BODY tp_placar AS 
-OVERRIDING NOT FINAL MEMBER FUNCTION aposta_odd IS
+OVERRIDING FINAL MEMBER FUNCTION aposta_odd IS
 diff INTEGER := (Gol_Mandante - Gol_Visitante);
 BEGIN
 RETURN diff;
@@ -195,7 +179,7 @@ CREATE TABLE tb_bonus OF tp_bonus(
     valor CHECK(valor > 0)
 );
 
-/*1.Recebe + NESTED TABLE tb_bonus_recebidos + REDEFINIÇÃO DO TIPO PESSOA
+/*1.Recebe + NESTED TABLE tb_bonus_recebidos + DEFINIÇÃO DO TIPO PESSOA
 PRA REPRESENTAR O RELACIONAMENTO 1:N + MÉTODOS PRA EXIBIR O CONTEÚDO DAS 
 NESTED TABLES*/
 
@@ -213,6 +197,8 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
     MEMBER PROCEDURE exibir_bonus(SELF tp_pessoa)
 
 );
+/*2. Indica -> Definição do tipo indicadores pra representar o relacionamento
+indica */
 CREATE OR REPLACE TYPE tp_indicadores AS OBJECT ( 
     Nome VARCHAR2(255), 
     Endereco VARCHAR2(255), 
@@ -254,28 +240,21 @@ CREATE OR REPLACE TYPE tp_pessoas_movimentam_contas AS OBJECT (
     valor DECIMAL(10,2), 
     DataHora TIMESTAMP, 
  
-    MEMBER PROCEDURE exibir_transação(SELF X tp_pessoas_movimentam_contas) 
+    MEMBER PROCEDURE exibir_transação(X tp_pessoas_movimentam_contas) 
 );
 CREATE OR REPLACE TYPE BODY tp_pessoas_movimentam_contas AS  
 MEMBER PROCEDURE exibir_transação IS 
 BEGIN 
-DBMS_OUTPUT.PUT_LINE('Nome : ' || VALUE(X.Pessoa.Nome)); 
-DBMS_OUTPUT.PUT_LINE('CPF : ' || DEREF(X.Pessoa.CPF)); 
+DBMS_OUTPUT.PUT_LINE('Nome : ' || VALUE(X.Pessoa).Nome); 
+DBMS_OUTPUT.PUT_LINE('CPF : ' || DEREF(X.Pessoa).CPF); 
 DBMS_OUTPUT.PUT_LINE('ID_Conta : ' || X.Conta.ID_Conta); 
 DBMS_OUTPUT.PUT_LINE('Valor : ' || X.valor); 
 DBMS_OUTPUT.PUT_LINE('Data e Hora : ' || X.DataHora);  
 END; 
 END;
-/*TABELAS DE OBJETOS*/
-CREATE TABLE tb_pessoas_movimentam_contas OF tp_pessoas_movimentam_contas(
-    Pessoa WITH ROWID REFERENCES tb_pessoas,
-    Conta WITH ROWID REFERENCES tb_conta,
-    valor CHECK(valor > 0),
-    DataHora NOT NULL
-);
 
-/*Indica + REDEFINIÇÃO DO TIPO PESSOA
-PRA REPRESENTAR O RELACIONAMENTO 1:N */
+
+
 CREATE TABLE tb_indicadores OF tp_indicadores(
     Nome NOT NULL,
     Endereco NOT NULL,
@@ -292,40 +271,66 @@ CREATE TABLE tb_pessoas OF tp_pessoa(
     Nascimento NOT NULL
 )NESTED TABLE bonus_recebido STORE AS tb_lista_bonus_2;
 
+/*TABELAS DE OBJETOS*/
+CREATE TABLE tb_pessoas_movimentam_contas OF tp_pessoas_movimentam_contas(
+    Pessoa WITH ROWID REFERENCES tb_pessoas,
+    Conta WITH ROWID REFERENCES tb_conta,
+    valor CHECK(valor > 0),
+    DataHora NOT NULL
+);
 /* Apostar + TIPO APOSTAR + MÉTODO QUE EXIBE AS APOSTAS FEITAS AO VIVO
 + CRIAÇÃO DA TABELA DE OBJETOS DO TIPO APOSTAR */
-CREATE OR REPLACE TYPE tp_apostar AS OBJECT( 
-    pessoas_movimentam_contas REF tp_pessoas_movimentam_contas, 
-    apostas REF tp_apostas, 
-    evento_esportivo REF tp_evento_esportivo, 
-    valor DECIMAL(10, 2), 
- 
-    MEMBER PROCEDURE apostas_aovivo(SELF X tp_apostar)
+CREATE OR REPLACE TYPE tp_apostar AS OBJECT(  
+    pessoas_movimentam_contas REF tp_pessoas_movimentam_contas,  
+    apostas REF tp_apostas,  
+    evento_esportivo REF tp_evento_esportivo,  
+    valor DECIMAL(10, 2),  
+  
+    MEMBER PROCEDURE apostas_aovivo(X tp_apostar) 
 );
 
-TYPE BODY tp_apostar AS 
-MEMBER PROCEDURE apostas_aovivo IS 
-DataHora evento_esportivo.DataHora%TYPE = evento_esportivo.DataHora; 
-Mandante evento_esportivo.Mandante%TYPE = evento_esportivo.Mandante; 
-BEGIN  
-    DBMS_OUTPUT.PUT_LINE(Mandante || "  X  " || DataHora); 
-    /*DBMS_OUTPUT.PUT_LINE(evento_esportivo.Estadio); 
-    DBMS_OUTPUT.PUT_LINE("Hora do jogo : " || evento_esportivo.DataHora);*/ 
+CREATE OR REPLACE TYPE BODY tp_apostar AS  
+MEMBER PROCEDURE apostas_aovivo IS  
+datahora evento_esportivo.DataHora%TYPE := evento_esportivo.DataHora;  
+mandante evento_esportivo.Mandante%TYPE := evento_esportivo.Mandante;  
+visitante evento_esportivo.Visitante%TYPE := evento_esportivo.Visitante; 
+estadio evento_esportivo.Estadio%TYPE := evento_esportivo.Estadio; 
  
-    /*IF (pessoas_movimentam_contas.DataHora >= DataHora) THEN 
-        /*DBMS_OUTPUT.PUT_LINE("Aposta ao vivo"); 
-        DBMS_OUTPUT.PUT_LINE("Hora da aposta : " || pessoas_movimentam_contas.DataHora); 
-        DBMS_OUTPUT.PUT_LINE("Valor da aposta : " || valor);*/ 
-    ELSE 
-        /*DBMS_OUTPUT.PUT_LINE("Aposta pré-jogo"); 
-        DBMS_OUTPUT.PUT_LINE("Hora da aposta : " || pessoas_movimentam_contas.DataHora); 
-        DBMS_OUTPUT.PUT_LINE("Valor da aposta : " || valor);*/ 
-    END IF;*/ 
-END; 
+BEGIN   
+    DBMS_OUTPUT.PUT_LINE(mandante || "  X  " || visitante || CHR(10) || estadio || "  " || datahora);  
+    IF (datahora_movimenta >= datahora) THEN  
+        DBMS_OUTPUT.PUT_LINE("Aposta ao vivo");  
+    ELSE  
+        DBMS_OUTPUT.PUT_LINE("Aposta pré-jogo");   
+    END IF; 
+END;  
 END;
 
 CREATE TABLE tb_apostar OF tp_apostar(
     evento_esportivo WITH ROWID REFERENCES tb_evento_esportivo,
-    aposta WITH ROWID REFERENCES (tb_ambos_marcam, tb_gols, tb_placar, tb_resultado),
     valor CHECK(valor > 0)
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
