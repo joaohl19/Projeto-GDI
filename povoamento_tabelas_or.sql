@@ -297,15 +297,6 @@ INSERT INTO tb_indicadores VALUES('Bruno', 'Rua 2, 30', '137.897.367-14', TO_DAT
 
 INSERT INTO tb_indicadores VALUES('Renato', 'Rua 3, 31', '137.897.367-15', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO1', 30), tp_bonus('JOAO19', 20)));
 
-INSERT INTO tb_indicadores VALUES('Maike', 'Rua 4, 32', '137.897.367-16', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO2', 30), tp_bonus('BRUNO3', 40)));
-
-INSERT INTO tb_indicadores VALUES('João Pedro', 'Rua 1, 29', '137.897.367-17', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO4', 50), tp_bonus('BRUNO5', 20)));
-
-INSERT INTO tb_indicadores VALUES('Bruno', 'Rua 2, 30', '137.897.367-18', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO6', 30), tp_bonus('BRUNO7', 40)));
-
-INSERT INTO tb_indicadores VALUES('Renato', 'Rua 3, 31', '137.897.367-19', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO8', 50), tp_bonus('BRUNO9', 20)));
-
-INSERT INTO tb_indicadores VALUES('Maike', 'Rua 4, 32', '137.897.367-20', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO10', 30), tp_bonus('BRUNO11', 40)));
 
 /* INSERINDO VALORES EM PESSOA */
 
