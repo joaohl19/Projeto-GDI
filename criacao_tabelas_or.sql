@@ -260,8 +260,8 @@ CREATE OR REPLACE TYPE tp_pessoas_movimentam_contas AS OBJECT (
 CREATE OR REPLACE TYPE BODY tp_pessoas_movimentam_contas AS  
 MEMBER PROCEDURE exibir_transação IS 
 BEGIN 
-DBMS_OUTPUT.PUT_LINE('Nome : ' || VALUE(X.Pessoa.Nome); 
-DBMS_OUTPUT.PUT_LINE('CPF : ' || DEREF(X.Pessoa.CPF); 
+DBMS_OUTPUT.PUT_LINE('Nome : ' || VALUE(X.Pessoa.Nome)); 
+DBMS_OUTPUT.PUT_LINE('CPF : ' || DEREF(X.Pessoa.CPF)); 
 DBMS_OUTPUT.PUT_LINE('ID_Conta : ' || X.Conta.ID_Conta); 
 DBMS_OUTPUT.PUT_LINE('Valor : ' || X.valor); 
 DBMS_OUTPUT.PUT_LINE('Data e Hora : ' || X.DataHora);  
