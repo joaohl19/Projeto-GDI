@@ -67,8 +67,7 @@ CREATE OR REPLACE TYPE tp_evento_esportivo AS OBJECT (
     FINAL MAP MEMBER FUNCTION mapear_datahora RETURN TIMESTAMP 
 );
 
-CREATE OR REPLACE TYPE BODY tp_evento_esportivo AS  
- 
+CREATE OR REPLACE TYPE BODY tp_evento_esportivo AS
 CONSTRUCTOR FUNCTION tp_evento_esportivo RETURN SELF AS RESULT IS 
     BEGIN 
         SELF.ID_Evento := seq_conta.NEXTVAL; 
@@ -123,7 +122,7 @@ CREATE OR REPLACE TYPE tp_gols UNDER tp_apostas(
     Quantidade INT, 
     CONSTRUCTOR FUNCTION tp_gols(X tp_apostas, Quantidade INT) RETURN SELF AS RESULT 
 )FINAL;
-CREATE OF REPLACE TYPE BODY tp_gols AS
+CREATE OR REPLACE TYPE BODY tp_gols AS
 CONSTRUCTOR FUNCTION tp_gols(X tp_apostas, Quantidade INT) RETURN SELF AS RESULT IS
 BEGIN
     SELF.ID_Aposta := X.ID_Aposta,
@@ -154,7 +153,7 @@ CREATE OR REPLACE TYPE tp_resultado UNDER tp_apostas(
 
 /* TIPO AMBOS_MARCAM */
 CREATE OR REPLACE TYPE tp_ambos_marcam UNDER tp_apostas(
-    Sim_Nao VARCHAR2(3) CHECK (Sim_Nao IN ('Sim', 'Nao'))
+    Sim_Nao VARCHAR2(3)
 )FINAL;
 
 CREATE TABLE tb_evento_esportivo OF tp_evento_esportivo(
