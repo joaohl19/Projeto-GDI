@@ -90,7 +90,7 @@ END;
 END;
 /
 
-/* TIPO BÔNUS + FUNÇÃO QUE RETORNA O SALDO DA PESSOA APÓS ESSE BÔNUS */
+/* TIPO BÔNUS + FUNÇÃO QUE RETORNA UM BÔNUS TURBINADO, CASO O BÔNUS POSSUA DETERMINADO CÓDIGO */
 CREATE OR REPLACE TYPE tp_bonus AS OBJECT (  
     código_bonus VARCHAR2(20),  
     valor DECIMAL(10,2),  
@@ -111,7 +111,8 @@ END;
 END;
 /
 
-/* TIPO ABSTRATO APOSTA FUNÇÃO QUE RETORNA OS GANHOS DESSA APOSTA */
+/* TIPO ABSTRATO APOSTA + FUNÇÃO QUE AS MAPEIA DE ACORDO COM
+A ODD */
 CREATE OR REPLACE TYPE tp_apostas AS OBJECT ( 
     ID_Aposta NUMBER, 
     Odd NUMBER(5, 2), 
@@ -127,14 +128,14 @@ END;
 END;
 /
 
-/* SUBTIPO GOLS COM UMA FUNÇÃO CONSTRUTORA */
+/* SUBTIPO GOLS*/
 CREATE OR REPLACE TYPE tp_gols UNDER tp_apostas( 
     Quantidade NUMBER 
 )FINAL;
 /
 
-/*SUBTIPO PLACAR COM MODIFICAÇÃO DA FUNÇÃO QUE RETORNA OS GANHOS
-DO TIPO APOSTA */
+/*SUBTIPO PLACAR COM MODIFICAÇÃO DA FUNÇÃO QUE MAPEIA AS APOSTAS
+DE ACORDO COM A ODD*/
 CREATE OR REPLACE TYPE tp_placar UNDER tp_apostas(
     Gol_Mandante NUMBER,
     Gol_Visitante NUMBER,
@@ -211,9 +212,7 @@ CREATE TABLE tb_bonus OF tp_bonus(
 );
 /
 
-/*1.Recebe + NESTED TABLE tb_bonus_recebidos + DEFINIÇÃO DO TIPO PESSOA
-PRA REPRESENTAR O RELACIONAMENTO 1:N + MÉTODOS PRA EXIBIR O CONTEÚDO DAS 
-NESTED TABLES*/
+/*1.Recebe + DEFINIÇÃO DO TIPO PESSOA + NESTED TABLE tb_bonus_recebidos PRA REPRESENTAR O RELACIONAMENTO 1:N + MÉTODOS PRA EXIBIR OS BÔNUS E OS TELEFONES*/
 
 CREATE OR REPLACE TYPE tb_bonus_recebidos AS TABLE OF tp_bonus;
 /
@@ -230,8 +229,8 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
 
 );
 /
-/*2. Indica -> Definição do tipo indicadores pra representar o relacionamento
-indica */
+/*2. Indica -> DEFINIÇÃO DO TIPO INDICADORES, USADO NO
+RELACIONAMENTO INDICA */
 CREATE OR REPLACE TYPE tp_indicadores AS OBJECT ( 
     Nome VARCHAR2(255), 
     Endereco VARCHAR2(255), 
@@ -320,9 +319,6 @@ END;
 END;
 /
 
-
-
-/*TABELAS DE OBJETOS*/
 CREATE TABLE tb_pessoas_movimentam_contas OF tp_pessoas_movimentam_contas(
     Pessoa WITH ROWID REFERENCES tb_pessoas,
     Conta WITH ROWID REFERENCES tb_conta,
@@ -331,8 +327,8 @@ CREATE TABLE tb_pessoas_movimentam_contas OF tp_pessoas_movimentam_contas(
 );
 /
 
-/* Apostar + TIPO APOSTAR + MÉTODO QUE EXIBE AS APOSTAS FEITAS AO VIVO
-+ CRIAÇÃO DA TABELA DE OBJETOS DO TIPO APOSTAR */
+/* Apostar + TIPO APOSTAR + MÉTODO QUE IDENTIFICA SE A APOSTA FOI
+FEITA DURANTE O JOGO E EXIBE INFORMAÇÕES ACERCA DELA*/
 CREATE OR REPLACE TYPE tp_apostar AS OBJECT(  
     pessoas_movimentam_contas REF tp_pessoas_movimentam_contas,  
     apostas REF tp_apostas,  
