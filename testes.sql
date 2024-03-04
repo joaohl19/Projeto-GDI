@@ -69,6 +69,10 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(pre_value);
     DBMS_OUTPUT.PUT_LINE(pos_value);
 END;
+/* TIPO APOSTA */
+select a.ID_Aposta, a.Odd, a.Resultado
+from tb_resultado a
+order by a.map_aposta();
 
 /* TIPO PLACAR */
 select a.ID_Aposta, a.Odd, a.Gol_Mandante, a.Gol_Visitante
@@ -101,7 +105,7 @@ BEGIN
 
 END;
 
-/* TIPO APOSTAR */
+/* TIPO APOSTAR - para testar aposta ao vivo, mudar cpf para 137-897-367-01 */
 DECLARE 
     ap tp_apostar; 
  
@@ -116,6 +120,8 @@ BEGIN
     ap.apostas_aovivo(); 
  
 END;
+
+
 
 
 

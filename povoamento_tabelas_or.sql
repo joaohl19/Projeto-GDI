@@ -506,7 +506,7 @@ INSERT INTO tb_pessoas_movimentam_contas VALUES(
     (SELECT REF(P) FROM tb_pessoas P WHERE CPF = '137.897.367-01'),
     (SELECT REF(C) FROM tb_conta C WHERE ID_Conta = 1),
     40.00,
-    TO_TIMESTAMP('2024-02-28 14:30:00', 'YYYY-MM-DD HH24:MI:SS')
+    TO_TIMESTAMP('2024-02-28 15:35:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_pessoas_movimentam_contas VALUES(

@@ -339,66 +339,87 @@ CREATE OR REPLACE TYPE tp_apostar AS OBJECT(
 );
 /
 
-CREATE OR REPLACE TYPE BODY tp_apostar AS  
-MEMBER PROCEDURE apostas_aovivo IS  
-    e tp_evento_esportivo;
-    pm TIMESTAMP;
-    ap tp_apostas;
-    gols tp_gols;
-    placar tp_placar;
-    resultado tp_resultado;
-    ambos tp_ambos_marcam;
-BEGIN   
-    SELECT VALUE(t) INTO e
-    FROM tb_evento_esportivo t
-    WHERE REF(t) = evento_esportivo;
-
-    SELECT p.DataHora INTO pm
-    FROM tb_pessoas_movimentam_contas p
-    WHERE REF(p) = pessoas_movimentam_contas;
-
-    SELECT VALUE(a) INTO ap
-    FROM tb_placar a
-    FULL JOIN tb_gols g ON (1 = 1)
-    FULL JOIN tb_resultado r ON (1 = 1)
-    FULL JOIN tb_ambos_marcam am ON (1 = 1)
-    WHERE REF(a) = apostas;
-
-    DBMS_OUTPUT.PUT_LINE(e.Mandante || '  X  ' || e.Visitante);
-    DBMS_OUTPUT.PUT_LINE(e.Estadio);
-    DBMS_OUTPUT.PUT_LINE(TO_CHAR(e.DataHora, 'DD-MM-YYYY HH24:MI'));
-    IF (pm >= e.DataHora) THEN  
-        DBMS_OUTPUT.PUT_LINE('Aposta ao vivo');
-    ELSE  
-        DBMS_OUTPUT.PUT_LINE('Aposta pré-jogo');   
-    END IF; 
-    DBMS_OUTPUT.PUT_LINE('Valor: ' || valor);
-   
-    IF (ap IS OF (tp_gols)) THEN
-        SELECT VALUE(g) INTO gols
-        FROM tb_gols g
-        WHERE REF(g) = apostas;
-        DBMS_OUTPUT.PUT_LINE('+'  || gols.Quantidade || ' gols');  
-    ELSIF(ap IS OF(tp_ambos_marcam)) THEN 
-        SELECT VALUE(g) INTO ambos
-        FROM tb_ambos_marcam g
-        WHERE REF(g) = apostas;
-        DBMS_OUTPUT.PUT_LINE('Para ambas as equipes marcarem' || ambos.Sim_Nao);    
-    ELSIF(ap IS OF (tp_resultado)) THEN 
-        SELECT VALUE(g) INTO resultado
-        FROM tb_resultado g
-        WHERE REF(g) = apostas;
-        DBMS_OUTPUT.PUT_LINE('Resultado : ' || resultado.Resultado);    
-    ELSE 
-        SELECT VALUE(g) INTO placar
-        FROM tb_placar g
-        WHERE REF(g) = apostas;
-        DBMS_OUTPUT.PUT_LINE('Placar exato : ' || placar.Gol_Mandante ||  '  X  ' || placar.Gol_Visitante);    
+CREATE OR REPLACE TYPE BODY tp_apostar AS   
+MEMBER PROCEDURE apostas_aovivo IS   
+    e tp_evento_esportivo; 
+    pm TIMESTAMP;  
+    gols tp_gols; 
+    placar tp_placar; 
+    resultado tp_resultado; 
+    ambos tp_ambos_marcam; 
+    cont1 NUMBER;
+    cont2 NUMBER;
+    cont3 NUMBER;
+ 
+BEGIN    
+    SELECT VALUE(t) INTO e 
+    FROM tb_evento_esportivo t 
+    WHERE REF(t) = evento_esportivo; 
+ 
+    SELECT p.DataHora INTO pm 
+    FROM tb_pessoas_movimentam_contas p 
+    WHERE REF(p) = pessoas_movimentam_contas; 
+    
+ 
+    DBMS_OUTPUT.PUT_LINE(e.Mandante || '  X  ' || e.Visitante); 
+    DBMS_OUTPUT.PUT_LINE(e.Estadio); 
+    DBMS_OUTPUT.PUT_LINE(TO_CHAR(e.DataHora, 'DD-MM-YYYY HH24:MI')); 
+    IF (pm >= e.DataHora) THEN   
+        DBMS_OUTPUT.PUT_LINE('Aposta ao vivo'); 
+    ELSE   
+        DBMS_OUTPUT.PUT_LINE('Aposta pré-jogo');    
     END IF;  
-    DBMS_OUTPUT.PUT_LINE('Odd : ' || ap.Odd); 
-    DBMS_OUTPUT.PUT_LINE('Retorno possível : ' || valor * ap.Odd);  
+    DBMS_OUTPUT.PUT_LINE('Valor: ' || valor); 
 
-END;  
+    SELECT COUNT(*) INTO cont1
+    FROM tb_gols g
+    WHERE REF(g) = apostas;
+
+    SELECT COUNT(*) INTO cont2
+    FROM tb_ambos_marcam amb
+    WHERE REF(amb) = apostas;
+
+    SELECT COUNT(*) INTO cont3
+    FROM tb_resultado r
+    WHERE REF(r) = apostas;
+
+
+    IF (cont1 > 0) THEN 
+        SELECT VALUE(g) INTO gols 
+        FROM tb_gols g 
+        WHERE REF(g) = apostas; 
+        DBMS_OUTPUT.PUT_LINE('+'  || gols.Quantidade || ' gols');
+        DBMS_OUTPUT.PUT_LINE('Odd : ' || gols.Odd);  
+        DBMS_OUTPUT.PUT_LINE('Retorno possível : ' || valor * gols.Odd);
+        RETURN;
+    ELSIF(cont2 > 0) THEN  
+        SELECT VALUE(amb) INTO ambos 
+        FROM tb_ambos_marcam amb 
+        WHERE REF(amb) = apostas; 
+        DBMS_OUTPUT.PUT_LINE('Para ambas as equipes marcarem: ' || ambos.Sim_Nao);
+        DBMS_OUTPUT.PUT_LINE('Odd : ' || ambos.Odd);  
+        DBMS_OUTPUT.PUT_LINE('Retorno possível : ' || valor * ambos.Odd);
+        RETURN;
+    
+    ELSIF(cont3 > 0) THEN  
+        SELECT VALUE(r) INTO resultado 
+        FROM tb_resultado r 
+        WHERE REF(r) = apostas; 
+        DBMS_OUTPUT.PUT_LINE('Resultado : ' || resultado.Resultado);
+        DBMS_OUTPUT.PUT_LINE('Odd : ' || resultado.Odd);  
+        DBMS_OUTPUT.PUT_LINE('Retorno possível : ' || valor * resultado.Odd);
+        RETURN;
+
+    ELSE  
+        SELECT VALUE(p) INTO placar 
+        FROM tb_placar p 
+        WHERE REF(p) = apostas; 
+        DBMS_OUTPUT.PUT_LINE('Placar exato : ' || placar.Gol_Mandante ||  '  X  ' || placar.Gol_Visitante);
+        DBMS_OUTPUT.PUT_LINE('Odd : ' || placar.Odd);  
+        DBMS_OUTPUT.PUT_LINE('Retorno possível : ' || valor * placar.Odd);
+    END IF;   
+    
+END;   
 END;
 /
 CREATE TABLE tb_apostar OF tp_apostar(
