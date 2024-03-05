@@ -201,7 +201,7 @@ CREATE TABLE tb_resultado OF tp_resultado(
 
 CREATE TABLE tb_conta OF tp_conta(
     ID_Conta PRIMARY KEY,
-    Saldo NOT NULL,
+    Saldo CHECK(Saldo > 0),
     Dados_Bancarios NOT NULL
 );
 /
