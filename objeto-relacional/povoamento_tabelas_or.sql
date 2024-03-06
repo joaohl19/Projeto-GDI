@@ -169,7 +169,7 @@ INSERT INTO tb_pessoas VALUES(
     '137.897.367-02', 
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('81992364721')), 
-    tb_bonus_recebidos(tp_bonus('BRUNO2', 30), tp_bonus('BRUNO3', 40)),
+    tb_bonus_recebidos(tp_bonus('BRUNO2', 10), tp_bonus('BRUNO3', 40)),
     (SELECT REF(I) FROM tb_pessoas I WHERE CPF = '137.897.367-01')
 );
 
@@ -299,7 +299,7 @@ INSERT INTO tb_pessoas VALUES(
     '137.897.367-15', 
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), 
-    tb_bonus_recebidos(tp_bonus('BRUNO1', 30), tp_bonus('JOAO19', 20)),
+    tb_bonus_recebidos(tp_bonus('BRUNO1', 40), tp_bonus('JOAO19', 30)),
     NULL
 );
 
@@ -309,7 +309,7 @@ INSERT INTO tb_pessoas VALUES(
     '137.897.367-16', 
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), 
-    tb_bonus_recebidos(tp_bonus('BRUNO2', 30), tp_bonus('BRUNO3', 40)),
+    tb_bonus_recebidos(tp_bonus('BRUNO2', 30), tp_bonus('BRUNO3', 50)),
     NULL
 );
 
@@ -319,7 +319,7 @@ INSERT INTO tb_pessoas VALUES(
     '137.897.367-17', 
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), 
-    tb_bonus_recebidos(tp_bonus('BRUNO4', 50), tp_bonus('BRUNO5', 20)),
+    tb_bonus_recebidos(tp_bonus('BRUNO4', 40), tp_bonus('BRUNO5', 10)),
     NULL
 );
 
@@ -329,7 +329,7 @@ INSERT INTO tb_pessoas VALUES(
     '137.897.367-18', 
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), 
-    tb_bonus_recebidos(tp_bonus('BRUNO6', 30), tp_bonus('BRUNO7', 40)),
+    tb_bonus_recebidos(tp_bonus('BRUNO6', 10), tp_bonus('BRUNO7', 60)),
     NULL
 );
 
@@ -339,7 +339,7 @@ INSERT INTO tb_pessoas VALUES(
     '137.897.367-19', 
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), 
-    tb_bonus_recebidos(tp_bonus('BRUNO8', 50), tp_bonus('BRUNO9', 20)),
+    tb_bonus_recebidos(tp_bonus('BRUNO8', 55), tp_bonus('BRUNO9', 25)),
     NULL
 );
 
@@ -349,7 +349,7 @@ INSERT INTO tb_pessoas VALUES(
     '137.897.367-20', 
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('85992893789'), tp_telefone('83992364721')), 
-    tb_bonus_recebidos(tp_bonus('BRUNO10', 30), tp_bonus('BRUNO11', 40)),
+    tb_bonus_recebidos(tp_bonus('BRUNO10', 35), tp_bonus('BRUNO11', 55)),
     NULL
 );
 
