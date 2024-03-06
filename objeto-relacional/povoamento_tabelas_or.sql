@@ -108,120 +108,6 @@ INSERT INTO tb_resultado VALUES(
     30, 1.5, 'Mandante'
 );
 
-/* INSERINDO VALORES EM BONUS */
-
-INSERT INTO tb_bonus VALUES(
-    'JOAO19', 20
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO2', 30
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO3', 40
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO4', 50
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO5', 20
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO6', 30
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO7', 40
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO8', 50
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO9', 20
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO10', 30
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO11', 40
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO12', 50
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO13', 20
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO14', 30
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO15', 40
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO16', 50
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO17', 20
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO18', 30
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO19', 40
-);
-
-INSERT INTO tb_bonus VALUES(
-    'BRUNO20', 50
-);
-
-INSERT INTO tb_bonus VALUES(
-    'RENATO20', 20
-);
-
-INSERT INTO tb_bonus VALUES(
-    'RENATO30', 30
-);
-
-INSERT INTO tb_bonus VALUES(
-    'RENATO40', 40
-);
-
-INSERT INTO tb_bonus VALUES(
-    'RENATO50', 50
-);
-
-INSERT INTO tb_bonus VALUES(
-    'MAIKE20', 20
-);
-
-INSERT INTO tb_bonus VALUES(
-    'MAIKE30', 30
-);
-
-INSERT INTO tb_bonus VALUES(
-    'MAIKE40', 40
-);
-
-INSERT INTO tb_bonus VALUES(
-    'MAIKE50', 50
-);
-
 /* INSERINDO VALORES EM EVENTO ESPORTIVO */
 
 DECLARE
@@ -265,39 +151,6 @@ INSERT INTO tb_conta VALUES(19, 220.00, tp_dados_bancarios('gkdjk19', '123498'))
 INSERT INTO tb_conta VALUES(20, 230.00, tp_dados_bancarios('gkdjk20', '123499'));
 INSERT INTO tb_conta VALUES(21, 240.00, tp_dados_bancarios('gkdjk21', '123500'));
 
-/* INSERINDO VALORES EM INDICADORES */
-
-INSERT INTO tb_indicadores VALUES('João Pedro', 'Rua 1, 29', '137.897.367-01', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO1', 30), tp_bonus('JOAO19', 20)));
-
-INSERT INTO tb_indicadores VALUES('Bruno', 'Rua 2, 30', '137.897.367-02', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('81992364721')), tb_bonus_recebidos(tp_bonus('BRUNO2', 30), tp_bonus('BRUNO3', 40)));
-
-INSERT INTO tb_indicadores VALUES('Renato', 'Rua 3, 31', '137.897.367-03', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO4', 50), tp_bonus('BRUNO5', 20)));
-
-INSERT INTO tb_indicadores VALUES('Maike', 'Rua 4, 32', '137.897.367-04', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('81992364721')), tb_bonus_recebidos(tp_bonus('BRUNO6', 30), tp_bonus('BRUNO7', 40)));
-
-INSERT INTO tb_indicadores VALUES('João Pedro', 'Rua 1, 29', '137.897.367-05', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('85992893789'), tp_telefone('81992364721')), tb_bonus_recebidos(tp_bonus('BRUNO8', 50), tp_bonus('BRUNO9', 20)));
-
-INSERT INTO tb_indicadores VALUES('Bruno', 'Rua 2, 30', '137.897.367-06', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('85992364721')), tb_bonus_recebidos(tp_bonus('BRUNO10', 30), tp_bonus('BRUNO11', 40)));
-
-INSERT INTO tb_indicadores VALUES('Renato', 'Rua 3, 31', '137.897.367-07', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('85992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO12', 50), tp_bonus('BRUNO13', 20)));
-
-INSERT INTO tb_indicadores VALUES('Maike', 'Rua 4, 32', '137.897.367-08', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO14', 30), tp_bonus('BRUNO15', 40)));
-
-INSERT INTO tb_indicadores VALUES('João Pedro', 'Rua 1, 29', '137.897.367-09', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('85992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO16', 50), tp_bonus('BRUNO17', 20)));
-
-INSERT INTO tb_indicadores VALUES('Bruno', 'Rua 2, 30', '137.897.367-10', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO18', 30), tp_bonus('BRUNO19', 40)));
-
-INSERT INTO tb_indicadores VALUES('Renato', 'Rua 3, 31', '137.897.367-11', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('RENATO20', 20), tp_bonus('RENATO30', 30)));
-
-INSERT INTO tb_indicadores VALUES('Maike', 'Rua 4, 32', '137.897.367-12', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('RENATO40', 40), tp_bonus('RENATO50', 50)));
-
-INSERT INTO tb_indicadores VALUES('João Pedro', 'Rua 1, 29', '137.897.367-13', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('MAIKE20', 20), tp_bonus('MAIKE30', 30)));
-
-INSERT INTO tb_indicadores VALUES('Bruno', 'Rua 2, 30', '137.897.367-14', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('MAIKE40', 40), tp_bonus('MAIKE50', 50)));
-
-INSERT INTO tb_indicadores VALUES('Renato', 'Rua 3, 31', '137.897.367-15', TO_DATE('1999-01-01', 'YYYY-MM-DD'), tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), tb_bonus_recebidos(tp_bonus('BRUNO1', 30), tp_bonus('JOAO19', 20)));
-
-
 /* INSERINDO VALORES EM PESSOA */
 
 INSERT INTO tb_pessoas VALUES(
@@ -307,7 +160,7 @@ INSERT INTO tb_pessoas VALUES(
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), 
     tb_bonus_recebidos(tp_bonus('BRUNO1', 30), tp_bonus('JOAO19', 20)),
-    (SELECT REF(I) FROM tb_indicadores I WHERE CPF = '137.897.367-02')
+    NULL
 );
 
 INSERT INTO tb_pessoas VALUES(
@@ -317,7 +170,7 @@ INSERT INTO tb_pessoas VALUES(
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('81992364721')), 
     tb_bonus_recebidos(tp_bonus('BRUNO2', 30), tp_bonus('BRUNO3', 40)),
-    (SELECT REF(I) FROM tb_indicadores I WHERE CPF = '137.897.367-03')
+    (SELECT REF(I) FROM tb_pessoas I WHERE CPF = '137.897.367-01')
 );
 
 INSERT INTO tb_pessoas VALUES(
@@ -327,7 +180,7 @@ INSERT INTO tb_pessoas VALUES(
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('83992364721')), 
     tb_bonus_recebidos(tp_bonus('BRUNO4', 50), tp_bonus('BRUNO5', 20)),
-    (SELECT REF(I) FROM tb_indicadores I WHERE CPF = '137.897.367-04')
+    (SELECT REF(I) FROM tb_pessoas I WHERE CPF = '137.897.367-02')
 );
 
 INSERT INTO tb_pessoas VALUES(
@@ -337,7 +190,7 @@ INSERT INTO tb_pessoas VALUES(
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('81992364721')), 
     tb_bonus_recebidos(tp_bonus('BRUNO6', 30), tp_bonus('BRUNO7', 40)),
-    (SELECT REF(I) FROM tb_indicadores I WHERE CPF = '137.897.367-05')
+    (SELECT REF(I) FROM tb_pessoas I WHERE CPF = '137.897.367-03')
 );
 
 INSERT INTO tb_pessoas VALUES(
@@ -347,7 +200,7 @@ INSERT INTO tb_pessoas VALUES(
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('85992893789'), tp_telefone('81992364721')), 
     tb_bonus_recebidos(tp_bonus('BRUNO8', 50), tp_bonus('BRUNO9', 20)),
-    (SELECT REF(I) FROM tb_indicadores I WHERE CPF = '137.897.367-06')
+    (SELECT REF(I) FROM tb_pessoas I WHERE CPF = '137.897.367-04')
 );
 
 INSERT INTO tb_pessoas VALUES(
@@ -357,7 +210,7 @@ INSERT INTO tb_pessoas VALUES(
     TO_DATE('1999-01-01', 'YYYY-MM-DD'), 
     tp_telefones(tp_telefone('81992893789'), tp_telefone('85992364721')), 
     tb_bonus_recebidos(tp_bonus('BRUNO10', 30), tp_bonus('BRUNO11', 40)),
-    NULL
+    (SELECT REF(I) FROM tb_pessoas I WHERE CPF = '137.897.367-05')
 );
 
 INSERT INTO tb_pessoas VALUES(
@@ -648,103 +501,118 @@ INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-01'),
     (SELECT REF(A) FROM tb_resultado A WHERE ID_Aposta = 21),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 1),
-    35.75
+    35.75,
+    TO_TIMESTAMP('2024-02-28 15:45:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-02'),
     (SELECT REF(A) FROM tb_resultado A WHERE ID_Aposta = 22),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 2),
-    45.75
+    45.75,
+    TO_TIMESTAMP('2024-02-28 16:35:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-03'),
     (SELECT REF(A) FROM tb_resultado A WHERE ID_Aposta = 23),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 3),
-    55.75
+    55.75,
+    TO_TIMESTAMP('2024-02-28 15:30:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-04'),
     (SELECT REF(A) FROM tb_resultado A WHERE ID_Aposta = 24),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 4),
-    65.75
+    65.75,
+    TO_TIMESTAMP('2024-02-28 18:45:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-05'),
     (SELECT REF(A) FROM tb_resultado A WHERE ID_Aposta = 25),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 5),
-    75.75
+    75.75,
+    TO_TIMESTAMP('2024-02-28 15:45:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-06'),
     (SELECT REF(A) FROM tb_ambos_marcam A WHERE ID_Aposta = 11),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 6),
-    85.75
+    85.75,
+    TO_TIMESTAMP('2024-02-28 16:50:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-07'),
     (SELECT REF(A) FROM tb_ambos_marcam A WHERE ID_Aposta = 12),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 7),
-    95.75
+    95.75,
+    TO_TIMESTAMP('2024-02-28 22:15:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-08'),
     (SELECT REF(A) FROM tb_ambos_marcam A WHERE ID_Aposta = 13),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 8),
-    105.75
+    105.75,
+    TO_TIMESTAMP('2024-02-28 23:20:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-09'),
     (SELECT REF(A) FROM tb_ambos_marcam A WHERE ID_Aposta = 14),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 9),
-    115.75
+    115.75,
+    TO_TIMESTAMP('2024-02-28 20:20:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-10'),
     (SELECT REF(A) FROM tb_ambos_marcam A WHERE ID_Aposta = 15),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 10),
-    125.75
+    125.75,
+    TO_TIMESTAMP('2024-02-28 23:20:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-11'),
     (SELECT REF(A) FROM tb_gols A WHERE ID_Aposta = 1),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 11),
-    135.75
+    135.75,
+    TO_TIMESTAMP('2024-02-29 01:47:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-12'),
     (SELECT REF(A) FROM tb_gols A WHERE ID_Aposta = 2),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 12),
-    145.75
+    145.75,
+    TO_TIMESTAMP('2024-02-29 00:45:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-13'),
     (SELECT REF(A) FROM tb_gols A WHERE ID_Aposta = 3),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 13),
-    155.75
+    155.75,
+    TO_TIMESTAMP('2024-02-29 01:00:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-14'),
     (SELECT REF(A) FROM tb_gols A WHERE ID_Aposta = 4),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 14),
-    165.75
+    165.75,
+    TO_TIMESTAMP('2024-02-29 02:00:00', 'YYYY-MM-DD HH24:MI:SS')
 );
 
 INSERT INTO tb_apostar VALUES(
     (SELECT REF(P) FROM tb_pessoas_movimentam_contas P WHERE P.pessoa.CPF = '137.897.367-15'),
     (SELECT REF(A) FROM tb_gols A WHERE ID_Aposta = 5),
     (SELECT REF(E) FROM tb_evento_esportivo E WHERE ID_Evento = 15),
-    175.75
+    175.75,
+    TO_TIMESTAMP('2024-02-29 02:30:00', 'YYYY-MM-DD HH24:MI:SS')
 );

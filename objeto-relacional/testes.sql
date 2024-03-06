@@ -55,20 +55,11 @@ from tb_evento_esportivo e
 order by e.mapear_datahora();
 
 /* TIPO BONUS */
-DECLARE
-    bonus tp_bonus;
-    pre_value DECIMAL(10,2);
-    pos_value DECIMAL(10, 2);
+select p.nome, b.código_bonus, b.valor as bonus_anterior, b.bonus_turbinado() as bonus_novo 
+from tb_pessoas p,
+table(p.bonus_recebido) b
 
-BEGIN
-    select value(b) into bonus
-    from tb_bonus b
-    where código_bonus = 'JOAO19';
-    pre_value := bonus.valor;
-    pos_value := bonus.bonus_turbinado();
-    DBMS_OUTPUT.PUT_LINE(pre_value);
-    DBMS_OUTPUT.PUT_LINE(pos_value);
-END;
+
 /* TIPO APOSTA */
 select a.ID_Aposta, a.Odd, a.Resultado
 from tb_resultado a

@@ -104,7 +104,7 @@ MEMBER FUNCTION bonus_turbinado RETURN valor%TYPE IS
 val_bonus valor%TYPE := valor;  
 BEGIN  
     IF (código_bonus = 'JOAO19') THEN 
-        RETURN (val_bonus * val_bonus);  
+        RETURN (val_bonus + val_bonus);  
     END IF; 
     RETURN valor;  
 END;  
@@ -177,6 +177,7 @@ CREATE TABLE tb_gols OF tp_gols(
     Quantidade CHECK (Quantidade > 0)
 );
 /
+
 CREATE TABLE tb_ambos_marcam OF tp_ambos_marcam(
     ID_Aposta PRIMARY KEY,
     Odd CHECK (Odd > 1),
@@ -206,12 +207,6 @@ CREATE TABLE tb_conta OF tp_conta(
 );
 /
 
-CREATE TABLE tb_bonus OF tp_bonus(
-    código_bonus NOT NULL,
-    valor CHECK(valor > 0)
-);
-/
-
 /*1.Recebe + DEFINIÇÃO DO TIPO PESSOA + NESTED TABLE tb_bonus_recebidos PRA REPRESENTAR O RELACIONAMENTO 1:N + MÉTODOS PRA EXIBIR OS BÔNUS E OS TELEFONES*/
 
 CREATE OR REPLACE TYPE tb_bonus_recebidos AS TABLE OF tp_bonus;
@@ -229,19 +224,11 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
 
 );
 /
-/*2. Indica -> DEFINIÇÃO DO TIPO INDICADORES, USADO NO
+/*2. Indica -> Adição do atributo INDICADORE, USADO NO
 RELACIONAMENTO INDICA */
-CREATE OR REPLACE TYPE tp_indicadores AS OBJECT ( 
-    Nome VARCHAR2(255), 
-    Endereco VARCHAR2(255), 
-    CPF VARCHAR2(20), 
-    Nascimento DATE, 
-    Telefones tp_telefones, 
-    bonus_recebido tb_bonus_recebidos 
-);
-/
+
 ALTER TYPE tp_pessoa
-ADD ATTRIBUTE(Indicador REF tp_indicadores) CASCADE;
+ADD ATTRIBUTE(Indicador REF tp_pessoa) CASCADE;
 /
 
 CREATE OR REPLACE TYPE BODY tp_pessoa AS  
@@ -280,16 +267,10 @@ CREATE OR REPLACE TYPE tp_pessoas_movimentam_contas AS OBJECT (
     MEMBER PROCEDURE exibir_transacao 
 );
 /
-CREATE TABLE tb_indicadores OF tp_indicadores(
-    Nome NOT NULL,
-    Endereco NOT NULL,
-    CPF PRIMARY KEY,
-    Nascimento NOT NULL
-)NESTED TABLE bonus_recebido STORE AS tb_lista_bonus;
-/
+
 /* TABELA DE OBJETOS DO TIPO PESSOA */
 CREATE TABLE tb_pessoas OF tp_pessoa(
-    Indicador SCOPE IS tb_indicadores,
+    Indicador SCOPE IS tb_pessoas,
     Nome NOT NULL,
     Endereco NOT NULL,
     CPF PRIMARY KEY,
@@ -322,7 +303,7 @@ END;
 CREATE TABLE tb_pessoas_movimentam_contas OF tp_pessoas_movimentam_contas(
     Pessoa WITH ROWID REFERENCES tb_pessoas,
     Conta WITH ROWID REFERENCES tb_conta,
-    valor CHECK(valor > 0),
+    valor CHECK(valor <> 0),
     DataHora NOT NULL
 );
 /
@@ -333,7 +314,8 @@ CREATE OR REPLACE TYPE tp_apostar AS OBJECT(
     pessoas_movimentam_contas REF tp_pessoas_movimentam_contas,  
     apostas REF tp_apostas,  
     evento_esportivo REF tp_evento_esportivo,  
-    valor DECIMAL(10, 2),  
+    valor DECIMAL(10, 2),
+    DataHora TIMESTAMP, 
   
     MEMBER PROCEDURE apostas_aovivo
 );
@@ -341,8 +323,7 @@ CREATE OR REPLACE TYPE tp_apostar AS OBJECT(
 
 CREATE OR REPLACE TYPE BODY tp_apostar AS   
 MEMBER PROCEDURE apostas_aovivo IS   
-    e tp_evento_esportivo; 
-    pm TIMESTAMP;  
+    e tp_evento_esportivo;   
     gols tp_gols; 
     placar tp_placar; 
     resultado tp_resultado; 
@@ -354,17 +335,12 @@ MEMBER PROCEDURE apostas_aovivo IS
 BEGIN    
     SELECT VALUE(t) INTO e 
     FROM tb_evento_esportivo t 
-    WHERE REF(t) = evento_esportivo; 
- 
-    SELECT p.DataHora INTO pm 
-    FROM tb_pessoas_movimentam_contas p 
-    WHERE REF(p) = pessoas_movimentam_contas; 
+    WHERE REF(t) = evento_esportivo;  
     
- 
     DBMS_OUTPUT.PUT_LINE(e.Mandante || '  X  ' || e.Visitante); 
     DBMS_OUTPUT.PUT_LINE(e.Estadio); 
     DBMS_OUTPUT.PUT_LINE(TO_CHAR(e.DataHora, 'DD-MM-YYYY HH24:MI')); 
-    IF (pm >= e.DataHora) THEN   
+    IF (DataHora >= e.DataHora) THEN   
         DBMS_OUTPUT.PUT_LINE('Aposta ao vivo'); 
     ELSE   
         DBMS_OUTPUT.PUT_LINE('Aposta pré-jogo');    
@@ -423,7 +399,9 @@ END;
 END;
 /
 CREATE TABLE tb_apostar OF tp_apostar(
+    pessoas_movimentam_contas WITH ROWID REFERENCES tb_pessoas_movimentam_contas,
     evento_esportivo WITH ROWID REFERENCES tb_evento_esportivo,
+    DataHora NOT NULL,
     valor CHECK(valor > 0)
 );
 /
