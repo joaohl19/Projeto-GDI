@@ -73,7 +73,7 @@ CREATE OR REPLACE TYPE tp_evento_esportivo AS OBJECT (
     MEMBER PROCEDURE exibir_partida(SELF IN OUT NOCOPY tp_evento_esportivo), 
  
     MAP MEMBER FUNCTION mapear_datahora RETURN DataHora%TYPE
-);
+) FINAL;
 /
 
 CREATE OR REPLACE TYPE BODY tp_evento_esportivo AS   
@@ -96,7 +96,7 @@ CREATE OR REPLACE TYPE tp_bonus AS OBJECT (
     valor DECIMAL(10,2),  
   
     MEMBER FUNCTION bonus_turbinado RETURN valor%TYPE 
-);
+) FINAL;
 /
 
 CREATE OR REPLACE TYPE BODY tp_bonus AS  
@@ -222,9 +222,9 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
     MEMBER PROCEDURE exibir_telefones,
     MEMBER PROCEDURE exibir_bonus
 
-);
+) FINAL;
 /
-/*2. Indica -> Adição do atributo INDICADORE, USADO NO
+/*2. Indica -> Adição do atributo INDICADOR, USADO NO
 RELACIONAMENTO INDICA */
 
 ALTER TYPE tp_pessoa
@@ -265,7 +265,7 @@ CREATE OR REPLACE TYPE tp_pessoas_movimentam_contas AS OBJECT (
     DataHora TIMESTAMP, 
  
     MEMBER PROCEDURE exibir_transacao 
-);
+)FINAL;
 /
 
 /* TABELA DE OBJETOS DO TIPO PESSOA */
@@ -308,7 +308,7 @@ CREATE TABLE tb_pessoas_movimentam_contas OF tp_pessoas_movimentam_contas(
 );
 /
 
-/* Apostar + TIPO APOSTAR + MÉTODO QUE IDENTIFICA SE A APOSTA FOI
+/*3. Apostar + TIPO APOSTAR + MÉTODO QUE IDENTIFICA SE A APOSTA FOI
 FEITA DURANTE O JOGO E EXIBE INFORMAÇÕES ACERCA DELA*/
 CREATE OR REPLACE TYPE tp_apostar AS OBJECT(  
     pessoas_movimentam_contas REF tp_pessoas_movimentam_contas,  
@@ -318,7 +318,7 @@ CREATE OR REPLACE TYPE tp_apostar AS OBJECT(
     DataHora TIMESTAMP, 
   
     MEMBER PROCEDURE apostas_aovivo
-);
+)FINAL;
 /
 
 CREATE OR REPLACE TYPE BODY tp_apostar AS   
