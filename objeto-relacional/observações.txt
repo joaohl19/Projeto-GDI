@@ -1,0 +1,1 @@
+Nessa entrega, acrescentamos ao diagrama a chave temporal do relacionamento apostar : DataHora. Também acrescentamos o atributo Odd(número que multiplica o valor apostado) à entidade aposta, além de termos deixado todos os atributos DataHora existentes como sendo simples
