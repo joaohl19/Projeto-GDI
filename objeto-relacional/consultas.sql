@@ -1,5 +1,3 @@
-/* CONSULTAS SIMPLES */
-
 /* seleciona as pessoas que possuem pelo menos 1 telefone com ddd 85 e a média dos bônus
 que elas receberam */
 

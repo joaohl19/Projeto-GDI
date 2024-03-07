@@ -268,7 +268,6 @@ CREATE OR REPLACE TYPE tp_pessoas_movimentam_contas AS OBJECT (
 )FINAL;
 /
 
-/* TABELA DE OBJETOS DO TIPO PESSOA */
 CREATE TABLE tb_pessoas OF tp_pessoa(
     Indicador SCOPE IS tb_pessoas,
     Nome NOT NULL,

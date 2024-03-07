@@ -96,7 +96,7 @@ BEGIN
 
 END;
 
-/* TIPO APOSTAR - para testar aposta ao vivo, mudar cpf para 137-897-367-01 */
+/* TIPO APOSTAR */
 DECLARE 
     ap tp_apostar; 
  
