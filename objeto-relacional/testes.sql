@@ -49,6 +49,7 @@ BEGIN
 
     evento.exibir_partida();
 END;
+
 /*mapear_datahora*/
 select e.Mandante, e.Visitante, e.Estadio, e.DataHora, e.ID_Evento
 from tb_evento_esportivo e 
